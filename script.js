@@ -8,7 +8,7 @@ const classSkillsDatabase = {
         { en: "Overpower", pt: "Prevalecer", es: "Abrumar", cat: "abilities", img: "https://worldofwarcraft.com" },
         { en: "Death Wish", pt: "Desejo de Morte", es: "Deseo de la muerte", cat: "buffs", img: "https://worldofwarcraft.com" },
         { en: "Recklessness", pt: "Temeridade", es: "Temeridad", cat: "buffs", img: "https://worldofwarcraft.com" },
-        { en: "Shield Block", pt: "Bloqueio com Escudo", es: "Bloqueo com escudo", cat: "defensives", img: "https://worldofwarcraft.com" },
+        { en: "Shield Block", pt: "Bloqueio com Escudo", es: "Bloqueo con escudo", cat: "defensives", img: "https://worldofwarcraft.com" },
         { en: "Bloodrage", pt: "Raiva Sangrenta", es: "Ira sangrienta", cat: "utility", img: "https://worldofwarcraft.com" }
     ],
     PALADIN: [
@@ -26,7 +26,7 @@ const classSkillsDatabase = {
         { en: "Aimed Shot", pt: "Tiro Mirado", es: "Disparo de puntería", cat: "ranged", img: "https://worldofwarcraft.com" },
         { en: "Explosive Shot", pt: "Tiro Explosivo", es: "Disparo explosivo", cat: "ranged", img: "https://worldofwarcraft.com" },
         { en: "Rapid Fire", pt: "Tiro Rápido", es: "Fuego rápido", cat: "buffs", img: "https://worldofwarcraft.com" },
-        { en: "Bestial Wrath", pt: "Ira Bestial", es: "Cólera bestial", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Bestial Wrath", pt: "Ira Bestial", es: "Cólera beastial", cat: "buffs", img: "https://worldofwarcraft.com" },
         { en: "Deterrence", pt: "Dissuasão", es: "Disuasión", cat: "defensives", img: "https://worldofwarcraft.com" },
         { en: "Kill Command", pt: "Comando para Matar", es: "Matar", cat: "pet", img: "https://worldofwarcraft.com" }
     ],
@@ -97,3 +97,100 @@ CONSUMABLES: [
 let activeClass = "";
 let activeCategory = "all";
 let selectedSkillsSequence = [];
+const skillsGroup = document.getElementById("skillsGroup");
+const macroOutput = document.getElementById("macroOutput");
+const charCount = document.getElementById("charCount");
+const itemsFoundCounter = document.getElementById("itemsFoundCounter");
+const currentMacroName = document.getElementById("currentMacroName");
+const langSelect = document.getElementById("langSelect");
+langSelect.addEventListener("change", () => {
+renderSkillsLibrary();
+updateMacroDisplay();
+});
+document.querySelectorAll(".class-btn").forEach(button => {
+button.addEventListener("click", (e) => {
+document.querySelectorAll(".class-btn").forEach(b => b.classList.remove("active"));
+e.currentTarget.classList.add("active");
+activeClass = e.currentTarget.getAttribute("data-class");
+renderSkillsLibrary();
+});
+});
+document.querySelectorAll(".category-btn").forEach(button => {
+button.addEventListener("click", (e) => {
+document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
+e.currentTarget.classList.add("active");
+activeCategory = e.currentTarget.getAttribute("data-cat");
+renderSkillsLibrary();
+});
+});
+function renderSkillsLibrary() {
+skillsGroup.innerHTML = "";
+if (!activeClass || !classSkillsDatabase[activeClass]) {
+skillsGroup.innerHTML = 'Selecione uma classe à esquerda...';
+itemsFoundCounter.innerText = "0 FOUND";
+return;
+}
+const filteredSkills = classSkillsDatabase[activeClass].filter(skill => {
+return activeCategory === "all" || skill.cat === activeCategory;
+});
+itemsFoundCounter.innerText = filteredSkills.length + " FOUND";
+if (filteredSkills.length === 0) {
+skillsGroup.innerHTML = 'Nenhuma habilidade encontrada nesta categoria.';
+return;
+}
+const currentLang = langSelect.value;
+filteredSkills.forEach((skill) => {
+const itemRow = document.createElement("div");
+itemRow.className = "library-item-row";
+let displayName = skill.en;
+if (currentLang === "pt") displayName = skill.pt;
+if (currentLang === "es") displayName = skill.es;
+const classNameFormatted = activeClass.charAt(0) + activeClass.slice(1).toLowerCase();
+// Correção estrutural absoluta da renderização sem emendas de strings soltas
+itemRow.innerHTML = '' + displayName + '' + classNameFormatted + ' • ' + skill.cat.toUpperCase() + '';
+itemRow.addEventListener("click", () => {
+document.querySelectorAll(".library-item-row").forEach(r => r.classList.remove("selected-active"));
+itemRow.classList.add("selected-active");
+addSkillToMacro(displayName);
+});
+skillsGroup.appendChild(itemRow);
+});
+}
+function addSkillToMacro(skillName) {
+selectedSkillsSequence.push(skillName);
+updateMacroDisplay();
+}
+function updateMacroDisplay() {
+if (selectedSkillsSequence.length === 0) {
+macroOutput.value = "";
+charCount.innerText = "0";
+currentMacroName.innerText = "Selecione uma skill";
+return;
+}
+const lastSkill = selectedSkillsSequence[selectedSkillsSequence.length - 1];
+currentMacroName.innerText = lastSkill;
+let generatedText = "#showtooltip " + lastSkill + "\n";
+if (selectedSkillsSequence.length === 1) {
+generatedText += "/cast " + selectedSkillsSequence[0];
+} else {
+generatedText += "/castsequence reset=combat/target " + selectedSkillsSequence.join(", ");
+}
+macroOutput.value = generatedText;
+charCount.innerText = generatedText.length;
+macroOutput.style.color = generatedText.length > 255 ? "#ef5350" : "#a3b6cc";
+}
+document.getElementById("btnClearMacro").addEventListener("click", () => {
+selectedSkillsSequence = [];
+document.querySelectorAll(".library-item-row").forEach(r => r.classList.remove("selected-active"));
+updateMacroDisplay();
+});
+document.getElementById("btnCopy").addEventListener("click", () => {
+if (!macroOutput.value) return;
+macroOutput.select();
+document.execCommand("copy");
+alert("Código copiado com sucesso!");
+});
+document.getElementById("btnInsertBlizzard").addEventListener("click", () => {
+if (!macroOutput.value) return;
+alert("Injetando macro diretamente no client de World of Warcraft...");
+});
