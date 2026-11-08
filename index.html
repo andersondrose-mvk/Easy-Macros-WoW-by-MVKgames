@@ -4,77 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Macro WoW by MVK</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Fira+Mono&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
 
     <div class="wow-addon-frame">
-        <!-- Barra Superior Oficial do Addon -->
-        <div class="wow-header">
-            <span class="addon-title" id="ui-title">FOREVER MACRO CREATOR <span class="version">by MVK</span></span>
+        <!-- Header / Cabeçalho -->
+        <header class="wow-header">
+            <h1 class="addon-title" id="ui-title">FOREVER MACRO CREATOR <span class="version">by MVK</span></h1>
             <div class="wow-header-right">
-                <!-- Seletor de Idioma Global -->
                 <div class="wow-lang-picker">
-                    <label for="langSelect" id="ui-lang-lbl">LANG:</label>
+                    <label for="langSelect" id="ui-lang-lbl" style="margin-right: 5px; font-size: 0.8rem; font-weight: bold;">IDIOMA:</label>
                     <select id="langSelect" class="wow-select-sm">
-                        <option value="en">English</option>
                         <option value="pt" selected>Português</option>
+                        <option value="en">English</option>
                         <option value="es">Espanhol</option>
                     </select>
                 </div>
-                <span class="auto-status">AUTO: ON</span>
-                <span class="close-btn">X</span>
+                <div class="auto-status">AUTO: ON</div>
             </div>
-        </div>
+        </header>
 
-        <!-- Layout Três Colunas (FMC Estético) -->
-        <div class="wow-main-layout">
+        <!-- Layout Principal -->
+        <main class="wow-main-layout">
             
-            <!-- Coluna 1: Classes com Ícones Oficiais -->
-            <div class="wow-column col-classes">
-                <div class="col-title" id="ui-col-classes">CLASSES</div>
-                <div class="button-list" id="classGrid">
-                    <button class="class-btn cls-warrior" data-class="WARRIOR">
-                        <img src="https://worldofwarcraft.com" class="class-icon"> WARRIOR
-                    </button>
-                    <button class="class-btn cls-paladin" data-class="PALADIN">
-                        <img src="https://worldofwarcraft.com" class="class-icon"> PALADIN
-                    </button>
-                    <button class="class-btn cls-hunter" data-class="HUNTER">
-                        <img src="https://worldofwarcraft.com" class="class-icon"> HUNTER
-                    </button>
-                    <button class="class-btn cls-rogue" data-class="ROGUE">
-                        <img src="https://worldofwarcraft.com" class="class-icon"> ROGUE
-                    </button>
-                    <button class="class-btn cls-priest" data-class="PRIEST">
-                        <img src="https://worldofwarcraft.com" class="class-icon"> PRIEST
-                    </button>
-                    <button class="class-btn cls-shaman" data-class="SHAMAN">
-                        <img src="https://worldofwarcraft.com" class="class-icon"> SHAMAN
-                    </button>
-                    <button class="class-btn cls-mage" data-class="MAGE">
-                        <img src="https://worldofwarcraft.com" class="class-icon"> MAGE
-                    </button>
-                    <button class="class-btn cls-warlock" data-class="WARLOCK">
-                        <img src="https://worldofwarcraft.com" class="class-icon"> WARLOCK
-                    </button>
-                    <button class="class-btn cls-druid" data-class="DRUID">
-                        <img src="https://worldofwarcraft.com" class="class-icon"> DRUID
-                    </button>
+            <!-- Coluna 1: Classes -->
+            <section class="wow-column">
+                <h2 class="col-title" id="ui-col-classes">CLASSES</h2>
+                <div class="button-list">
+                    <button class="class-btn cls-warrior" data-class="WARRIOR">WARRIOR</button>
+                    <button class="class-btn cls-paladin" data-class="PALADIN">PALADIN</button>
+                    <button class="class-btn cls-hunter" data-class="HUNTER">HUNTER</button>
+                    <button class="class-btn cls-rogue" data-class="ROGUE">ROGUE</button>
+                    <button class="class-btn cls-priest" data-class="PRIEST">PRIEST</button>
+                    <button class="class-btn cls-shaman" data-class="SHAMAN">SHAMAN</button>
+                    <button class="class-btn cls-mage" data-class="MAGE">MAGE</button>
+                    <button class="class-btn cls-warlock" data-class="WARLOCK">WARLOCK</button>
+                    <button class="class-btn cls-druid" data-class="DRUID">DRUID</button>
                 </div>
-            </div>
+            </section>
 
-            <!-- Coluna 2: Habilidades Dinâmicas e Modificadores -->
-            <div class="wow-column col-categories">
-                <div class="col-title" id="ui-col-categories">CATEGORIES</div>
-
+            <!-- Coluna 2: Categorias e Habilidades -->
+            <section class="wow-column">
+                <h2 class="col-title" id="ui-col-categories">CATEGORIAS</h2>
+                
                 <div class="category-section">
                     <span class="section-label" id="ui-skills-lbl">Habilidades Disponíveis:</span>
                     <div class="wow-checkbox-list" id="skillsGroup">
-                        <div class="empty-notice" id="ui-empty-notice">Selecione uma classe à esquerda...</div>
+                        <div class="empty-notice">Selecione uma classe à esquerda...</div>
                     </div>
                 </div>
 
@@ -82,61 +60,61 @@
                     <span class="section-label" id="ui-mods-lbl">Modificadores Globais:</span>
                     <div class="wow-checkbox-list">
                         <label class="wow-checkbox">
-                            <input type="checkbox" id="useTrinket13"> 
-                            <img src="https://worldofwarcraft.com" class="skill-icon-mini">
+                            <input type="checkbox" id="useTrinket13">
+                            <img src="https://worldofwarcraft.com" class="skill-icon-mini" alt="Trinket 13">
                             <span id="ui-t13">Usar Slot Berloque 13</span>
                         </label>
                         <label class="wow-checkbox">
-                            <input type="checkbox" id="useTrinket14"> 
-                            <img src="https://worldofwarcraft.com" class="skill-icon-mini">
+                            <input type="checkbox" id="useTrinket14">
+                            <img src="https://worldofwarcraft.com" class="skill-icon-mini" alt="Trinket 14">
                             <span id="ui-t14">Usar Slot Berloque 14</span>
                         </label>
                         <label class="wow-checkbox">
-                            <input type="checkbox" id="usePotion"> 
-                            <img src="https://worldofwarcraft.com" class="skill-icon-mini">
-                            <span id="ui-pot">Usar Potion Automática</span>
+                            <input type="checkbox" id="usePotion">
+                            <img src="https://worldofwarcraft.com" class="skill-icon-mini" alt="Potion">
+                            <span id="ui-pot">Usar Poção Automática</span>
                         </label>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Coluna 3: Editor de Destino e Janela de Geração -->
-            <div class="wow-column col-library">
-                <div class="col-title" id="ui-col-builder">MACRO BUILDER</div>
+            <!-- Coluna 3: Construtor de Macros -->
+            <section class="wow-column">
+                <h2 class="col-title" id="ui-col-builder">CONSTRUTOR DE MACRO</h2>
                 
-                <div class="wow-field-inline" style="margin-top: 5px; margin-bottom: 10px;">
-                    <label for="resetSelect" id="ui-reset-lbl">Tipo de Reset:</label>
-                    <select id="resetSelect" class="wow-select-sm" onchange="toggleResetInput()">
-                        <option value="combat/target" selected>Combat / Target</option>
+                <div class="category-section wow-field">
+                    <label for="resetSelect" id="ui-reset-lbl" style="font-weight: bold;">Condição de Reset:</label>
+                    <select id="resetSelect" class="wow-input" onchange="toggleResetInput()">
+                        <option value="combat/target">Combat / Target</option>
                         <option value="combat">Combat</option>
                         <option value="target">Target</option>
                         <option value="seconds">Segundos / Seconds</option>
                     </select>
                 </div>
 
-                <div class="wow-field hidden" id="resetSecsContainer" style="margin-bottom: 10px;">
-                    <label for="resetSeconds" id="ui-reset-secs-lbl">Tempo de Reset (em segundos):</label>
-                    <input type="number" id="resetSeconds" class="wow-input" value="5" min="1" max="99">
+                <div class="category-section wow-field hidden" id="resetSecsContainer">
+                    <label for="resetSeconds" id="ui-reset-secs-lbl" style="font-weight: bold;">Tempo de Reset (em segundos):</label>
+                    <input type="number" id="resetSeconds" class="wow-input" value="5" min="1">
                 </div>
 
-                <div class="wow-field">
-                    <label for="finalSkill" id="ui-final-lbl">Feitiço de Encerramento (Com GCD):</label>
-                    <input type="text" id="finalSkill" class="wow-input" placeholder="Ex: Mortal Strike, Immolate...">
+                <div class="category-section wow-field">
+                    <label for="finalSkill" id="ui-final-lbl" style="font-weight: bold;">Feitiço de Encerramento (Com GCD):</label>
+                    <input type="text" id="finalSkill" class="wow-input" placeholder="Ex: Shadow Bolt">
                 </div>
 
                 <div class="macro-display-panel">
-                    <div class="panel-subtitle" id="ui-script-lbl">Script Gerado Final</div>
-                    <textarea id="macroOutput" readonly placeholder="#showtooltip..."></textarea>
+                    <span class="panel-subtitle" id="ui-script-lbl">Script Gerado Final</span>
+                    <textarea id="macroOutput" readonly></textarea>
                     <div class="char-counter"><span id="charCount">0</span> / 255</div>
                 </div>
 
                 <div class="wow-action-row">
-                    <button id="btnGenerate" class="wow-btn btn-gold">GENERATE COMBO</button>
-                    <button id="btnCopy" class="wow-btn">COPY CODE</button>
+                    <button class="wow-btn btn-gold" id="btnGenerate">GERAR COMBO</button>
+                    <button class="wow-btn" id="btnCopy">COPIAR CÓDIGO</button>
                 </div>
-            </div>
+            </section>
 
-        </div>
+        </main>
     </div>
 
     <script src="script.js"></script>

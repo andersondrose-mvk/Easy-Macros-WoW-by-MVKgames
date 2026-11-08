@@ -16,7 +16,7 @@ const uiTranslations = {
         t13: "Use Trinket Slot 13", t14: "Use Trinket Slot 14", pot: "Use Automatic Potion",
         finalLbl: "Finishing Spell (With GCD):", scriptLbl: "Final Generated Script",
         btnGenerate: "GENERATE COMBO", btnCopy: "COPY CODE", alertParams: "Please select parameters to generate the macro!",
-        alertCopy: "Code copied to clipboard!", potionItem: "Potion", cdText: "CD",
+        alertCopy: "Code clipboard!", potionItem: "Potion", cdText: "CD",
         resetLbl: "Reset Condition:", resetSecsLbl: "Reset Time (in seconds):"
     },
     es: {
@@ -105,8 +105,10 @@ function traduzirInterface() {
     const currentLang = langSelect.value;
     const txt = uiTranslations[currentLang];
     Object.keys(uiElements).forEach(key => {
-        if(key === 'title') uiElements[key].innerHTML = txt[key];
-        else uiElements[key].innerText = txt[key];
+        if(uiElements[key]) {
+            if(key === 'title') uiElements[key].innerHTML = txt[key];
+            else uiElements[key].innerText = txt[key];
+        }
     });
     renderSkillsList();
 }
@@ -116,8 +118,8 @@ langSelect.addEventListener("change", traduzirInterface);
 document.querySelectorAll(".class-btn").forEach(button => {
     button.addEventListener("click", (e) => {
         document.querySelectorAll(".class-btn").forEach(b => b.classList.remove("active"));
-        e.target.classList.add("active");
-        activeClass = e.target.getAttribute("data-class");
+        e.currentTarget.classList.add("active");
+        activeClass = e.currentTarget.getAttribute("data-class");
         renderSkillsList();
     });
 });
@@ -179,8 +181,7 @@ document.getElementById("btnGenerate").addEventListener("click", () => {
     } else if (finalSkill !== "") {
         macroLines.push("/cast " + finalSkill);
     }
-
-    const finalText = macroLines.join("\n");
+const finalText = macroLines.join("\n");
 macroOutput.value = finalText;
 charCount.innerText = finalText.length;
 macroOutput.style.color = finalText.length > 255 ? "#ef5350" : "#64ffda";
