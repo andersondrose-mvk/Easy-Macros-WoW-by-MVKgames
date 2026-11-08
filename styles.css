@@ -1,3 +1,5 @@
+/* cspell:disable-file */
+
 :root {
     --wow-bg-main: #0c0f12;
     --wow-bg-dark: #07090c;
@@ -14,18 +16,22 @@
     box-sizing: border-box;
 }
 
+/* Corpo configurado para empilhar o app e o rodapé verticalmente */
 body {
     background-color: #050506;
     background-image: radial-gradient(circle, #151922 0%, #050506 100%);
     color: #fff;
     font-family: 'Roboto Condensed', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    gap: 20px;
 }
 
+/* Moldura principal do Add-on */
 .wow-addon-frame {
     background-color: var(--wow-bg-main);
     border: 1px solid var(--wow-border-color);
@@ -38,6 +44,7 @@ body {
     flex-direction: column;
 }
 
+/* Cabeçalho */
 .wow-header {
     background-color: var(--wow-bg-header);
     border-bottom: 1px solid var(--wow-border-color);
@@ -101,6 +108,7 @@ body {
     color: #fff;
 }
 
+/* Barra de Busca Superior */
 .search-bar-row {
     display: flex;
     background-color: var(--wow-bg-dark);
@@ -151,6 +159,7 @@ body {
     color: #fff;
 }
 
+/* Layout em Três Colunas Físicas */
 .wow-main-layout {
     display: grid;
     grid-template-columns: 180px 180px 1fr;
@@ -182,6 +191,7 @@ body {
     overflow-y: auto;
 }
 
+/* Botões da Coluna 1 (Classes) */
 .class-btn {
     width: 100%;
     background: none;
@@ -201,6 +211,7 @@ body {
     border-left-color: var(--wow-blue-accent);
 }
 
+/* Cores Oficiais das Classes no WoW */
 .cls-warrior { color: #c79c6e; }
 .cls-paladin { color: #f58cba; }
 .cls-hunter { color: #abd473; }
@@ -212,6 +223,7 @@ body {
 .cls-druid { color: #ff7d0a; }
 .cls-consumables { color: #4caf50; }
 
+/* Botões da Coluna 2 (Categorias) */
 .category-btn {
     width: 100%;
     background: none;
@@ -233,6 +245,7 @@ body {
     background: linear-gradient(90deg, rgba(255,157,0,0.08) 0%, transparent 100%);
 }
 
+/* Coluna 3 (Painel de Exibição Principal) */
 .main-content-col {
     padding: 12px;
     background-color: var(--wow-bg-dark);
@@ -258,6 +271,7 @@ body {
     font-weight: bold;
 }
 
+/* Lista Dinâmica de Magias */
 .macro-library-list {
     flex: 1;
     overflow-y: auto;
@@ -276,6 +290,7 @@ body {
     padding: 40px 0;
 }
 
+/* Cards Individuais das Magias */
 .library-item-row {
     background-color: #0c0f12;
     border: 1px solid #191f2b;
@@ -322,6 +337,7 @@ body {
     font-size: 0.72rem;
 }
 
+/* Painel de Código da Macro (Fundo) */
 .macro-builder-bottom-panel {
     border-top: 1px solid var(--wow-border-color);
     margin-top: 12px;
@@ -390,6 +406,7 @@ body {
     cursor: default;
 }
 
+/* Botões Inferiores de Ação */
 .wow-action-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -418,6 +435,8 @@ body {
     border-color: #46341a;
     color: #dae2ec;
 }
+
+/* Seletor Físico de Idiomas (Header) */
 .wow-lang-select {
     background-color: #07090c;
     color: #a3b6cc;
@@ -429,23 +448,29 @@ body {
     cursor: pointer;
     border-radius: 3px;
 }
+
 .wow-lang-select:focus {
     outline: none;
     border-color: #2979ff;
 }
+
+/* Rodapé Ajustado na Parte Inferior Externa */
 footer {
     text-align: center;
-    padding: 20px;
-    font-family: sans-serif;
-    color: #cccccc;
-    background-color: #1a1a1a;
+    padding: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #48586c;
+    background: none;
+    width: 100%;
+    max-width: 900px;
 }
 
 footer p {
-    margin: 5px 0;
+    margin: 4px 0;
+    font-size: 0.85rem;
 }
 
 footer small {
-    color: #888888;
-    font-size: 0.85em;
+    color: #333d4b;
+    font-size: 0.75rem;
 }
