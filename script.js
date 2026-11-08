@@ -6,10 +6,10 @@ const classSkillsDatabase = {
         { en: "Mortal Strike", pt: "Golpe Mortal", es: "Golpe mortal", cat: "abilities", img: "https://worldofwarcraft.com" },
         { en: "Bloodthirst", pt: "Sede de Sangue", es: "Sanguinario", cat: "abilities", img: "https://worldofwarcraft.com" },
         { en: "Overpower", pt: "Prevalecer", es: "Abrumar", cat: "abilities", img: "https://worldofwarcraft.com" },
-        { en: "Rend", pt: "Gutilhar", es: "Desgarrar", cat: "abilities", img: "https://worldofwarcraft.com" },
-        { en: "Heroic Strike", pt: "Golpe Heroico", es: "Golpe heroico", cat: "abilities", img: "https://worldofwarcraft.com" },
-        { en: "Execute", pt: "Executar", es: "Ejecutar", cat: "abilities", img: "https://worldofwarcraft.com" },
-        { en: "Whirlwind", pt: "Torvelinho", es: "Torbellino", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Rend", pt: "Gutilhar", es: "Desgarrar", cat: "melee attacks", img: "https://worldofwarcraft.com" },
+        { en: "Heroic Strike", pt: "Golpe Heroico", es: "Golpe heroico", cat: "melee attacks", img: "https://worldofwarcraft.com" },
+        { en: "Execute", pt: "Executar", es: "Ejecutar", cat: "melee attacks", img: "https://worldofwarcraft.com" },
+        { en: "Whirlwind", pt: "Torvelinho", es: "Torbellino", cat: "melee attacks", img: "https://worldofwarcraft.com" },
         { en: "Death Wish", pt: "Desejo de Morte", es: "Deseo de la muerte", cat: "buffs", img: "https://worldofwarcraft.com" },
         { en: "Recklessness", pt: "Temeridade", es: "Temeridad", cat: "buffs", img: "https://worldofwarcraft.com" },
         { en: "Shield Block", pt: "Bloqueio com Escudo", es: "Bloqueo con escudo", cat: "defensives", img: "https://worldofwarcraft.com" },
@@ -96,7 +96,7 @@ CONSUMABLES: [
 { en: "Runic Healing Potion", pt: "Poção de Cura Rúnica", es: "Poción de sanación rúnica", cat: "potions", img: "worldofwarcraft.com" },
 { en: "Runic Mana Potion", pt: "Poção de Mana Rúnica", es: "Poción de maná rúnica", cat: "potions", img: "worldofwarcraft.com" },
 { en: "Potion of Speed", pt: "Poção de Velocidade", es: "Poción de velocidad", cat: "potions", img: "worldofwarcraft.com" },
-{ en: "Flame Cap", pt: "Gorro de Chama", es: "Sombrero de llama", cat: "other", img: "worldofwarcraft.com" }
+{ en: "Flame Cap", pt: "Gorro de Chama", es: "Sombrero de llama", cat: "other items", img: "worldofwarcraft.com" }
 ]
 };
 let activeClass = "";
@@ -141,15 +141,15 @@ return;
 }
 const currentLang = langSelect.value;
 const searchQuery = skillSearch.value.toLowerCase().trim();
-// Fusão cruzada para misturar os consumíveis globais à lista da classe ativa
+// Fusão dinâmica para injetar consumíveis na aba de classes normais
 let standardSkills = classSkillsDatabase[activeClass] || [];
 if (activeClass !== "CONSUMABLES") {
 standardSkills = standardSkills.concat(classSkillsDatabase["CONSUMABLES"] || []);
 }
 const filteredSkills = standardSkills.filter(function(skill) {
-// Normalização crítica: força a correspondência mesmo se o HTML usar caixa alta/baixa
-const normalizedActiveCat = activeCategory.toLowerCase();
-const normalizedSkillCat = skill.cat.toLowerCase();
+// Alinhamento exato: remove espaços extras e força caixa baixa para bater com o data-cat do seu HTML
+const normalizedActiveCat = activeCategory.toLowerCase().trim();
+const normalizedSkillCat = skill.cat.toLowerCase().trim();
 const matchesCategory = (normalizedActiveCat === "all" || normalizedSkillCat === normalizedActiveCat);
 let displayName = skill.en;
 if (currentLang === "pt") displayName = skill.pt;
@@ -169,7 +169,7 @@ let displayName = skill.en;
 if (currentLang === "pt") displayName = skill.pt;
 if (currentLang === "es") displayName = skill.es;
 const classNameFormatted = activeClass.charAt(0) + activeClass.slice(1).toLowerCase();
-// Injeção limpa de nós de marcação nativa da web permitindo o carregamento local de imagens (.jpg)
+// Injeção de tags HTML limpas em string contínua corrigindo os links quebrados das imagens (.jpg)
 itemRow.innerHTML = '' + displayName + '' + classNameFormatted + ' • ' + skill.cat.toUpperCase() + '';
 itemRow.addEventListener("click", function() {
 document.querySelectorAll(".library-item-row").forEach(function(r) { r.classList.remove("selected-active"); });
@@ -200,7 +200,7 @@ generatedText += "/castsequence reset=combat/target " + selectedSkillsSequence.j
 }
 macroOutput.value = generatedText;
 charCount.innerText = generatedText.length;
-macroOutput.style.color = selectedSkillsSequence.join(", ").length > 255 ? "#ef5350" : "#a3b6cc";
+macroOutput.style.color = generatedText.length > 255 ? "#ef5350" : "#a3b6cc";
 }
 document.getElementById("btnClearMacro").addEventListener("click", function() {
 selectedSkillsSequence = [];
