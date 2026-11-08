@@ -141,13 +141,16 @@ return;
 }
 const currentLang = langSelect.value;
 const searchQuery = skillSearch.value.toLowerCase().trim();
-// Mapeamento cruzado para injetar itens globais e poções na aba do Warlock ou de qualquer classe selecionada
+// Fusão cruzada para misturar os consumíveis globais à lista da classe ativa
 let standardSkills = classSkillsDatabase[activeClass] || [];
 if (activeClass !== "CONSUMABLES") {
 standardSkills = standardSkills.concat(classSkillsDatabase["CONSUMABLES"] || []);
 }
 const filteredSkills = standardSkills.filter(function(skill) {
-const matchesCategory = (activeCategory === "all" || skill.cat === activeCategory);
+// Normalização crítica: força a correspondência mesmo se o HTML usar caixa alta/baixa
+const normalizedActiveCat = activeCategory.toLowerCase();
+const normalizedSkillCat = skill.cat.toLowerCase();
+const matchesCategory = (normalizedActiveCat === "all" || normalizedSkillCat === normalizedActiveCat);
 let displayName = skill.en;
 if (currentLang === "pt") displayName = skill.pt;
 if (currentLang === "es") displayName = skill.es;
@@ -166,7 +169,7 @@ let displayName = skill.en;
 if (currentLang === "pt") displayName = skill.pt;
 if (currentLang === "es") displayName = skill.es;
 const classNameFormatted = activeClass.charAt(0) + activeClass.slice(1).toLowerCase();
-// Estrutura física da tag img corrigida para navegadores web locais (file:///)
+// Injeção limpa de nós de marcação nativa da web permitindo o carregamento local de imagens (.jpg)
 itemRow.innerHTML = '' + displayName + '' + classNameFormatted + ' • ' + skill.cat.toUpperCase() + '';
 itemRow.addEventListener("click", function() {
 document.querySelectorAll(".library-item-row").forEach(function(r) { r.classList.remove("selected-active"); });
@@ -197,7 +200,7 @@ generatedText += "/castsequence reset=combat/target " + selectedSkillsSequence.j
 }
 macroOutput.value = generatedText;
 charCount.innerText = generatedText.length;
-macroOutput.style.color = generatedText.length > 255 ? "#ef5350" : "#a3b6cc";
+macroOutput.style.color = selectedSkillsSequence.join(", ").length > 255 ? "#ef5350" : "#a3b6cc";
 }
 document.getElementById("btnClearMacro").addEventListener("click", function() {
 selectedSkillsSequence = [];
