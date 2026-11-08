@@ -82,145 +82,15 @@ const classSkillsDatabase = {
         { en: "Wrath", pt: "Ira", cat: "ranged", img: "https://worldofwarcraft.com" },
         { en: "Starfire", pt: "Fogo Estelar", cat: "ranged", img: "https://worldofwarcraft.com" },
         { en: "Shred", pt: "Despedaçar", cat: "abilities", img: "https://worldofwarcraft.com" },
-        { en: "Mangle", pt: "Mutilar", cat: "abilities", img: "https://worldofwarcraft.com" },
-        { en: "Tiger's Fury", pt: "Fúria do Tigre", cat: "buffs", img: "https://worldofwarcraft.com" },
-        { en: "Barkskin", pt: "Pele de Árvore", cat: "defensives", img: "https://worldofwarcraft.com" },
-        { en: "Cyclone", pt: "Ciclone", cat: "control", img: "https://worldofwarcraft.com" }
-    ],
-    CONSUMABLES: [
-        { en: "Runic Healing Potion", pt: "Poção de Cura Rúnica", cat: "potions", img: "https://worldofwarcraft.com" },
-        { en: "Runic Mana Potion", pt: "Poção de Mana Rúnica", cat: "potions", img: "https://worldofwarcraft.com" },
-        { en: "Potion of Speed", pt: "Poção de Velocidade", cat: "potions", img: "https://worldofwarcraft.com" },
-        { en: "Flame Cap", pt: "Gorro de Chama", cat: "other", img: "https://worldofwarcraft.com" }
-    ]
+{ en: "Mangle", pt: "Mutilar", cat: "abilities", img: "worldofwarcraft.com" },
+{ en: "Tiger's Fury", pt: "Fúria do Tigre", cat: "buffs", img: "worldofwarcraft.com" },
+{ en: "Barkskin", pt: "Pele de Árvore", cat: "defensives", img: "worldofwarcraft.com" },
+{ en: "Cyclone", pt: "Ciclone", cat: "control", img: "worldofwarcraft.com" }
+],
+CONSUMABLES: [
+{ en: "Runic Healing Potion", pt: "Poção de Cura Rúnica", cat: "potions", img: "worldofwarcraft.com" },
+{ en: "Runic Mana Potion", pt: "Poção de Mana Rúnica", cat: "potions", img: "worldofwarcraft.com" },
+{ en: "Potion of Speed", pt: "Poção de Velocidade", cat: "potions", img: "worldofwarcraft.com" },
+{ en: "Flame Cap", pt: "Gorro de Chama", cat: "other", img: "worldofwarcraft.com" }
+]
 };
-
-let activeClass = "";
-let activeCategory = "all";
-let currentLanguage = "pt"; // Idioma inicial padronizado ('pt' ou 'en')
-let selectedSkillsSequence = []; // Armazena os objetos completos de skill para tradução dinâmica
-
-// Elementos DOM
-const skillsGroup = document.getElementById("skillsGroup");
-const macroOutput = document.getElementById("macroOutput");
-const charCount = document.getElementById("charCount");
-const itemsFoundCounter = document.getElementById("itemsFoundCounter");
-const currentMacroName = document.getElementById("currentMacroName");
-const langSelect = document.getElementById("langSelect"); // Certifique-se de ter um <select id="langSelect"> no HTML
-
-// Monitoramento da alteração de idioma
-if (langSelect) {
-    langSelect.addEventListener("change", (e) => {
-        currentLanguage = e.target.value.toLowerCase();
-        renderSkillsLibrary();
-        updateMacroDisplay();
-    });
-}
-
-// Inicialização dos botões das classes
-document.querySelectorAll(".class-btn").forEach(button => {
-    button.addEventListener("click", (e) => {
-        document.querySelectorAll(".class-btn").forEach(b => b.classList.remove("active"));
-        e.currentTarget.classList.add("active");
-        activeClass = e.currentTarget.getAttribute("data-class");
-        renderSkillsLibrary();
-    });
-});
-
-// Inicialização dos botões das categorias
-document.querySelectorAll(".category-btn").forEach(button => {
-    button.addEventListener("click", (e) => {
-        document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
-        e.currentTarget.classList.add("active");
-        activeCategory = e.currentTarget.getAttribute("data-cat");
-        renderSkillsLibrary();
-    });
-});
-
-// Renderizador da biblioteca baseado no idioma ativo
-function renderSkillsLibrary() {
-    skillsGroup.innerHTML = "";
-    if (!activeClass || !classSkillsDatabase[activeClass]) {
-        skillsGroup.innerHTML = '<div class="empty-notice">Selecione uma classe à esquerda...</div>';
-        itemsFoundCounter.innerText = "0 FOUND";
-        return;
-    }
-
-    const filteredSkills = classSkillsDatabase[activeClass].filter(skill => {
-return activeCategory === "all" || skill.cat === activeCategory;
-});
-itemsFoundCounter.innerText = filteredSkills.length + " FOUND";
-if (filteredSkills.length === 0) {
-skillsGroup.innerHTML = 'Nenhuma habilidade encontrada nesta categoria.';
-return;
-}
-filteredSkills.forEach((skill) => {
-const itemRow = document.createElement("div");
-itemRow.className = "library-item-row";
-// Define o nome de exibição conforme idioma selecionado
-const displayName = currentLanguage === "pt" ? (skill.pt || skill.en) : (skill.en || skill.pt);
-const classNameFormatted = activeClass.charAt(0) + activeClass.slice(1).toLowerCase();
-const fallbackImg = "https://worldofwarcraft.com";
-const iconSrc = skill.img ? skill.img : fallbackImg;
-let rowContent = "";
-rowContent += '';
-rowContent += '';
-rowContent += '' + displayName + '';
-rowContent += '' + classNameFormatted + ' • ' + skill.cat.toUpperCase() + '';
-rowContent += '';
-itemRow.innerHTML = rowContent;
-itemRow.addEventListener("click", () => {
-document.querySelectorAll(".library-item-row").forEach(r => r.classList.remove("selected-active"));
-itemRow.classList.add("selected-active");
-addSkillToMacro(skill);
-});
-skillsGroup.appendChild(itemRow);
-});
-}
-function addSkillToMacro(skillObj) {
-selectedSkillsSequence.push(skillObj);
-updateMacroDisplay();
-}
-// Atualização e montagem do script final da macro considerando o idioma ativo
-function updateMacroDisplay() {
-if (selectedSkillsSequence.length === 0) {
-macroOutput.value = "";
-charCount.innerText = "0";
-currentMacroName.innerText = "Selecione uma skill";
-return;
-}
-const lastSkillObj = selectedSkillsSequence[selectedSkillsSequence.length - 1];
-const lastSkillName = currentLanguage === "pt" ? (lastSkillObj.pt || lastSkillObj.en) : (lastSkillObj.en || lastSkillObj.pt);
-currentMacroName.innerText = lastSkillName;
-// Converte toda a lista de objetos para os nomes corretos do idioma atual
-const skillNamesList = selectedSkillsSequence.map(s => currentLanguage === "pt" ? (s.pt || s.en) : (s.en || s.pt));
-let generatedText = "#showtooltip " + lastSkillName + "\n";
-if (skillNamesList.length === 1) {
-generatedText += "/cast " + skillNamesList[0];
-} else {
-generatedText += "/castsequence reset=combat/target " + skillNamesList.join(", ");
-}
-macroOutput.value = generatedText;
-charCount.innerText = String(generatedText.length);
-if (generatedText.length > 255) {
-macroOutput.style.color = "#ef5350";
-} else {
-macroOutput.style.color = "#a3b6cc";
-}
-}
-// Ações dos botões inferiores
-document.getElementById("btnClearMacro").addEventListener("click", () => {
-selectedSkillsSequence = [];
-document.querySelectorAll(".library-item-row").forEach(r => r.classList.remove("selected-active"));
-updateMacroDisplay();
-});
-document.getElementById("btnCopy").addEventListener("click", () => {
-if (!macroOutput.value) return;
-macroOutput.select();
-document.execCommand("copy");
-alert("Código copiado com sucesso!");
-});
-document.getElementById("btnInsertBlizzard").addEventListener("click", () => {
-if (!macroOutput.value) return;
-alert("Injetando macro diretamente no client de World of Warcraft...");
-});

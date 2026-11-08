@@ -1,3 +1,4 @@
+<!-- cspell:disable -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,13 +11,20 @@
 <body>
 
     <div class="wow-addon-frame">
-        <!-- Cabeçalho -->
+        <!-- Cabeçalho com o Seletor de Idioma lado a lado com o AUTO: ON -->
         <header class="wow-header">
             <div class="addon-title-group">
                 <img src="https://worldofwarcraft.com" class="header-logo" alt="WoW Logo">
                 <h1 class="addon-title">FOREVER MACRO CREATOR <span class="sub-nav">SEARCH • SELECT • INSERT</span></h1>
             </div>
             <div class="wow-header-right">
+                <!-- Seletor de Idioma Integrado -->
+                <div class="wow-lang-picker">
+                    <select id="langSelect" class="wow-lang-select">
+                        <option value="pt" selected>PT-BR</option>
+                        <option value="en">EN-US</option>
+                    </select>
+                </div>
                 <div class="auto-status">AUTO: ON</div>
                 <button class="close-btn">×</button>
             </div>

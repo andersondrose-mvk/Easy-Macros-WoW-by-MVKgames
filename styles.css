@@ -418,3 +418,18 @@ body {
     border-color: #46341a;
     color: #dae2ec;
 }
+.wow-lang-select {
+    background-color: #07090c;
+    color: #a3b6cc;
+    border: 1px solid #202631;
+    padding: 3px 8px;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.wow-lang-select:focus {
+    outline: none;
+    border-color: #2979ff;
+}
