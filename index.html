@@ -4,46 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EASY MACRO CREATOR by MVKgames</title>
+    <title>FOREVER MACRO CREATOR</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
 
     <div class="wow-addon-frame">
-        <!-- Cabeçalho com o Seletor de Idioma lado a lado com o AUTO: ON -->
+        <!-- Cabeçalho -->
         <header class="wow-header">
             <div class="addon-title-group">
                 <img src="https://worldofwarcraft.com" class="header-logo" alt="WoW Logo">
-                <h1 class="addon-title">EASY MACRO CREATOR by MVKgames <span class="sub-nav">SEARCH • SELECT • INSERT</span></h1>
+                <h1 class="addon-title">FOREVER MACRO CREATOR <span class="sub-nav">SEARCH • SELECT • INSERT</span></h1>
             </div>
             <div class="wow-header-right">
-                <!-- Seletor de Idioma Integrado -->
                 <div class="wow-lang-picker">
-    <select id="langSelect" class="wow-lang-select">
-        <option value="pt" selected>PT-BR</option>
-        <option value="en">EN-US</option>
-        <option value="es">ES-ES</option>
-    </select>
-</div>
-
+                    <select id="langSelect" class="wow-lang-select">
+                        <option value="pt" selected>PT-BR</option>
+                        <option value="en">EN-US</option>
+                        <option value="es">ES-ES</option>
+                    </select>
+                </div>
                 <div class="auto-status">AUTO: ON</div>
                 <button class="close-btn">×</button>
             </div>
         </header>
 
-        <!-- Barra de Busca e Controle -->
+        <!-- Barra de Busca -->
         <div class="search-bar-row">
             <div class="search-box-wrapper">
                 <span class="search-icon">🔍</span>
-                <!-- cspell:disable -->
                 <input type="text" id="skillSearch" placeholder="Procure por habilidades...">
-
             </div>
             <button class="wow-btn-clear" id="btnClearMacro">CLEAR</button>
         </div>
 
-        <!-- Grade de Três Colunas -->
+        <!-- Grade Principal -->
         <main class="wow-main-layout">
             
             <!-- Coluna 1: Classes -->
@@ -63,38 +59,39 @@
                 </div>
             </section>
 
-            <!-- Coluna 2: Categorias -->
+            <!-- Coluna 2: Categorias Sincronizadas com FMC -->
             <section class="wow-column column-borders">
                 <h2 class="col-title">CATEGORIES</h2>
                 <div class="button-list" id="categoriesGroup">
-                    <button class="category-btn active" data-cat="all">All Macros</button>
-                    <button class="category-btn" data-cat="abilities">Abilities</button>
-                    <button class="category-btn" data-cat="buffs">Buffs</button>
-                    <button class="category-btn" data-cat="control">Control</button>
-                    <button class="category-btn" data-cat="defensives">Defensives</button>
-                    <button class="category-btn" data-cat="learned">Learned Abilities</button>
-                    <button class="category-btn" data-cat="other">Other Items</button>
-                    <button class="category-btn" data-cat="pet">Pet</button>
-                    <button class="category-btn" data-cat="potions">Potions</button>
-                    <button class="category-btn" data-cat="ranged">Ranged Attacks</button>
-                    <button class="category-btn" data-cat="targeting">Targeting</button>
-                    <button class="category-btn" data-cat="utility">Utility</button>
+                    <button class="category-btn active" data-cat="ALL">All Macros</button>
+                    <button class="category-btn" data-cat="ABILITIES">Abilities</button>
+                    <button class="category-btn" data-cat="BUFFS">Buffs</button>
+                    <button class="category-btn" data-cat="CONTROL">Control</button>
+                    <button class="category-btn" data-cat="DEFENSIVE">Defensives</button>
+                    <button class="category-btn" data-cat="HEALING">Healing</button>
+                    <button class="category-btn" data-cat="LEARNED">Learned Abilities</button>
+                    <button class="category-btn" data-cat="MELEE">Melee Attacks</button>
+                    <button class="category-btn" data-cat="PET">Pet</button>
+                    <button class="category-btn" data-cat="POTIONS">Potions</button>
+                    <button class="category-btn" data-cat="CONSUMABLES">Other Items</button>
+                    <button class="category-btn" data-cat="RANGED">Ranged Attacks</button>
+                    <button class="category-btn" data-cat="TOTEMS">Totems</button>
+                    <button class="category-btn" data-cat="TARGETING">Targeting</button>
+                    <button class="category-btn" data-cat="UTILITY">Utility</button>
                 </div>
             </section>
 
-            <!-- Coluna 3: Lista de Encontros e Editor -->
+            <!-- Coluna 3: Lista e Editor -->
             <section class="wow-column main-content-col">
                 <div class="library-header">
                     <h2 class="col-title">MACRO LIBRARY</h2>
                     <span class="found-counter" id="itemsFoundCounter">0 FOUND</span>
                 </div>
                 
-                <!-- Lista de Habilidades Dinâmicas -->
                 <div class="macro-library-list" id="skillsGroup">
                     <div class="empty-notice">Selecione uma classe à esquerda...</div>
                 </div>
 
-                <!-- Painel Inferior de Código Construído -->
                 <div class="macro-builder-bottom-panel">
                     <div class="macro-meta-info">
                         <span class="current-macro-name" id="currentMacroName">Selecione uma skill</span>
@@ -115,12 +112,9 @@
                     </div>
                 </div>
             </section>
-
         </main>
-    <!-- ... restante do código da div .wow-addon-frame ... -->
     </div>
 
-    <!-- Rodapé posicionado do lado de fora na parte inferior -->
     <footer>
         <p>© 2024 Anderson Dröse (MVKgames). Todos os direitos reservados.</p>
         <p><small>Este projeto é uma obra derivada baseada no add-on <strong>Forever Macro Creator</strong> por <em>ASadSin</em>.</small></p>
@@ -129,4 +123,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
