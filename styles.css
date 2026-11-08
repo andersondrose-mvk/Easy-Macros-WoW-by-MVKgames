@@ -32,16 +32,23 @@ body {
 }
 
 /* Moldura principal do Add-on */
+.wow-addon-stage {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+}
+
 .wow-addon-frame {
     background-color: var(--wow-bg-main);
     border: 1px solid var(--wow-border-color);
     width: 100%;
-    max-width: 900px;
     box-shadow: 0 25px 60px rgba(0,0,0,0.85);
     border-radius: 4px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 /* Cabeçalho */
@@ -61,8 +68,9 @@ body {
 }
 
 .header-logo {
-    width: 20px;
-    height: 20px;
+    width: 62px;
+    height: 50px;
+    flex: 0 0 auto;
     object-fit: contain;
 }
 
@@ -475,4 +483,35 @@ footer p {
 footer small {
     color: #333d4b;
     font-size: 0.75rem;
+}
+
+@media (min-width: 1200px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .wow-addon-stage::before,
+    .wow-addon-stage::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: calc((100vw - 900px) / 2);
+        background: url("assets/side-character.jpg") center / 100% 100% no-repeat;
+        opacity: 0.55;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .wow-addon-stage::before {
+        right: 100%;
+        -webkit-mask-image: linear-gradient(to right, #000 65%, transparent);
+        mask-image: linear-gradient(to right, #000 65%, transparent);
+    }
+
+    .wow-addon-stage::after {
+        left: 100%;
+        -webkit-mask-image: linear-gradient(to left, #000 65%, transparent);
+        mask-image: linear-gradient(to left, #000 65%, transparent);
+    }
 }
