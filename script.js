@@ -15,7 +15,29 @@ const skillSearch = document.getElementById("skillSearch");
 const defaultSkillIcon = "https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg";
 const skillIconCache = new Map();
 const skillIconRequests = new Map();
+const skillIconStorageKey = "easyMacrosWowIconCacheV1";
 let skillIconObserver;
+
+try {
+    const storedSkillIcons = JSON.parse(localStorage.getItem(skillIconStorageKey) || "{}");
+    Object.keys(storedSkillIcons).forEach(function(key) {
+        const iconUrl = storedSkillIcons[key];
+        if (/^(spell|item):\d+$/.test(key) &&
+            /^https:\/\/wow\.zamimg\.com\/images\/wow\/icons\/large\/[a-z0-9_]+\.jpg$/i.test(iconUrl)) {
+            skillIconCache.set(key, iconUrl);
+        }
+    });
+} catch (error) {
+    console.warn("Could not read the saved WoW icon cache.", error);
+}
+
+function saveSkillIconCache() {
+    try {
+        localStorage.setItem(skillIconStorageKey, JSON.stringify(Object.fromEntries(skillIconCache)));
+    } catch (error) {
+        console.warn("Could not save the WoW icon cache.", error);
+    }
+}
 const classNames = {
     pt: {
         WARRIOR: "Guerreiro", PALADIN: "Paladino", HUNTER: "Caçador",
@@ -91,36 +113,37 @@ function fetchSkillIcon(skill) {
     const separator = key.indexOf(":");
     const type = key.slice(0, separator);
     const id = key.slice(separator + 1);
-    const classicDatabase = fetch("https://classicdb.ch/?" + type + "=" + id)
+    const currentDatabase = fetch("https://nether.wowhead.com/tooltip/" + type + "/" + id + "?dataEnv=1&locale=0")
         .then(function(response) {
-            if (!response.ok) throw new Error("Classic database returned HTTP " + response.status);
-            return response.text();
+            if (!response.ok) throw new Error("Wowhead icon service returned HTTP " + response.status);
+            return response.json();
         })
-        .then(function(html) {
-            const iconPattern = new RegExp("_\\[" + id + "\\]=\\{icon:'([^']+)'");
-            const match = html.match(iconPattern);
-            if (!match || !/^[a-z0-9_]+$/i.test(match[1])) {
-                throw new Error("Classic database has no icon for " + key);
+        .then(function(data) {
+            if (!data.icon || !/^[a-z0-9_]+$/i.test(data.icon)) {
+                throw new Error("Wowhead icon service has no icon for " + key);
             }
-            return match[1];
+            return data.icon;
+        })
+        .catch(function() {
+            return fetch("https://classicdb.ch/?" + type + "=" + id)
+                .then(function(response) {
+                    if (!response.ok) throw new Error("Classic database returned HTTP " + response.status);
+                    return response.text();
+                })
+                .then(function(html) {
+                    const iconPattern = new RegExp("_\\[" + id + "\\]=\\{icon:'([^']+)'");
+                    const match = html.match(iconPattern);
+                    if (!match || !/^[a-z0-9_]+$/i.test(match[1])) {
+                        throw new Error("Classic database has no icon for " + key);
+                    }
+                    return match[1];
+                });
         });
-    const currentDatabase = classicDatabase.catch(function() {
-        return fetch("https://nether.wowhead.com/tooltip/" + type + "/" + id + "?dataEnv=1&locale=0")
-            .then(function(response) {
-                if (!response.ok) throw new Error("Fallback icon service returned HTTP " + response.status);
-                return response.json();
-            })
-            .then(function(data) {
-                if (!data.icon || !/^[a-z0-9_]+$/i.test(data.icon)) {
-                    throw new Error("Fallback icon service has no icon for " + key);
-                }
-                return data.icon;
-            });
-    });
     const request = currentDatabase
         .then(function(iconName) {
             const iconUrl = "https://wow.zamimg.com/images/wow/icons/large/" + iconName.toLowerCase() + ".jpg";
             skillIconCache.set(key, iconUrl);
+            saveSkillIconCache();
             return iconUrl;
         })
         .catch(function(error) {
@@ -289,6 +312,8 @@ const icon = document.createElement("img");
 icon.className = "library-item-icon";
 icon.src = defaultSkillIcon;
 icon.alt = "";
+icon.loading = "lazy";
+icon.decoding = "async";
 icon.setAttribute("aria-hidden", "true");
 icon.addEventListener("error", function() {
     if (icon.src !== defaultSkillIcon) icon.src = defaultSkillIcon;
@@ -387,5 +412,5 @@ if ("IntersectionObserver" in window) {
             const icon = entry.target.querySelector(".library-item-icon");
             if (icon && entry.target.skillData) loadSkillIcon(icon, entry.target.skillData);
         });
-    }, { root: skillsGroup });
+    }, { root: skillsGroup, rootMargin: "100px" });
 }
