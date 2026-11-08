@@ -1,0 +1,12 @@
+Forever Macro Creator 1.0.0
+
+- First WoW Forever release.
+- Added automatic side-by-side Blizzard Macro window integration.
+- Added searchable libraries for all nine original Classic classes.
+- Added color-coded class and macro categories.
+- Added spell and consumable icons.
+- Added direct insertion into Blizzard's selected macro editor.
+- Added selectable code preview for Ctrl+C copying.
+- Added current-character spellbook discovery.
+- Added potions, combat consumables, mouseover, focus, pet, and targeting macros.
+- Added Addon Compartment and HidingBar-compatible launcher support.

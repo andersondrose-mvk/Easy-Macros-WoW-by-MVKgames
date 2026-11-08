@@ -316,8 +316,10 @@ body {
 .library-item-icon {
     width: 32px;
     height: 32px;
+    flex: 0 0 32px;
     border: 1px solid #232b3a;
     border-radius: 3px;
+    object-fit: cover;
 }
 
 .library-item-info {

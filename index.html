@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EASY MACRO CREATOR by MVKgames</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 </head><!-- cspell:disable -->
 
 <body>
@@ -15,8 +15,8 @@
         <!-- Cabeçalho -->
         <header class="wow-header">
             <div class="addon-title-group">
-                <img src="https://worldofwarcraft.com" class="header-logo" alt="WoW Logo">
-                <h1 class="addon-title">EASY MACRO CREATOR by MVKgames2 <span class="sub-nav">SEARCH • SELECT • INSERT</span></h1>
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=80&q=80" class="header-logo" alt="WoW Logo">
+                <h1 class="addon-title">EASY MACRO CREATOR by MVKgames <span class="sub-nav">SEARCH • SELECT • INSERT</span></h1>
             </div>
             <div class="wow-header-right">
                 <div class="wow-lang-picker">
@@ -45,7 +45,7 @@
             
             <!-- Coluna 1: Classes -->
             <section class="wow-column column-borders">
-                <h2 class="col-title">CLASSES</h2>
+                <h2 class="col-title" id="classesHeading">CLASSES</h2>
                 <div class="button-list">
                     <button class="class-btn cls-warrior" data-class="WARRIOR">WARRIOR</button>
                     <button class="class-btn cls-paladin" data-class="PALADIN">PALADIN</button>
@@ -62,23 +62,24 @@
 
             <!-- Coluna 2: Categorias Sincronizadas com FMC -->
             <section class="wow-column column-borders">
-                <h2 class="col-title">CATEGORIES</h2>
+                <h2 class="col-title" id="categoriesHeading">CATEGORIES</h2>
                 <div class="button-list" id="categoriesGroup">
-                    <button class="category-btn active" data-cat="ALL">All Macros</button>
-                    <button class="category-btn" data-cat="ABILITIES">Abilities</button>
-                    <button class="category-btn" data-cat="BUFFS">Buffs</button>
-                    <button class="category-btn" data-cat="CONTROL">Control</button>
-                    <button class="category-btn" data-cat="DEFENSIVE">Defensives</button>
-                    <button class="category-btn" data-cat="HEALING">Healing</button>
-                    <button class="category-btn" data-cat="LEARNED">Learned Abilities</button>
-                    <button class="category-btn" data-cat="MELEE">Melee Attacks</button>
-                    <button class="category-btn" data-cat="PET">Pet</button>
-                    <button class="category-btn" data-cat="POTIONS">Potions</button>
-                    <button class="category-btn" data-cat="CONSUMABLES">Other Items</button>
-                    <button class="category-btn" data-cat="RANGED">Ranged Attacks</button>
-                    <button class="category-btn" data-cat="TOTEMS">Totems</button>
-                    <button class="category-btn" data-cat="TARGETING">Targeting</button>
-                    <button class="category-btn" data-cat="UTILITY">Utility</button>
+                    <button class="category-btn active" data-cat="all">All Macros</button>
+                    <button class="category-btn" data-cat="abilities">Abilities</button>
+                    <button class="category-btn" data-cat="buffs">Buffs</button>
+                    <button class="category-btn" data-cat="control">Control</button>
+                    <button class="category-btn" data-cat="defensives">Defensives</button>
+                    <button class="category-btn" data-cat="forms">Forms</button>
+                    <button class="category-btn" data-cat="healing">Healing</button>
+                    <button class="category-btn" data-cat="learned">Learned Abilities</button>
+                    <button class="category-btn" data-cat="melee">Melee Attacks</button>
+                    <button class="category-btn" data-cat="pet">Pet</button>
+                    <button class="category-btn" data-cat="potions">Potions</button>
+                    <button class="category-btn" data-cat="consumables">Other Items</button>
+                    <button class="category-btn" data-cat="ranged">Ranged Attacks</button>
+                    <button class="category-btn" data-cat="totems">Totems</button>
+                    <button class="category-btn" data-cat="targeting">Targeting</button>
+                    <button class="category-btn" data-cat="utility">Utility</button>
                 </div>
             </section>
 
@@ -121,6 +122,7 @@
         <p><small>Este projeto é uma obra derivada baseada no add-on <strong>Forever Macro Creator</strong> por <em>ASadSin</em>.</small></p>
     </footer>
 
+    <script src="skills-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

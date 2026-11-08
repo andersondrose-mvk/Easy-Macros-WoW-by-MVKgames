@@ -1,0 +1,18 @@
+## Interface: 16001
+## Title: Forever Macro Creator
+## Notes: A searchable, TSM-inspired macro library that opens beside Blizzard's Macro window.
+## Author: TacticalRabbit
+## Version: 1.0.0
+## SavedVariables: ForeverMacroCreatorDB
+## AddonCompartmentFunc: ForeverMacroCreator_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: ForeverMacroCreator_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: ForeverMacroCreator_OnAddonCompartmentLeave
+## IconTexture: Interface\Icons\INV_Misc_Note_01
+## Category-enUS: Action Bars
+## X-Flavor: Forever
+
+Defaults.lua
+API.lua
+Data.lua
+UI.lua
+Core.lua
