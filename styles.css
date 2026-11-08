@@ -1,0 +1,341 @@
+/* Paleta de Cores e Bordas Alinhadas ao FMC Addon */
+:root {
+  --wow-frame-bg: #121214;
+  --wow-panel-bg: #18181c;
+  --wow-inner-bg: #0c0c0e;
+  --wow-border-gold: #c79c6e;
+  --wow-border-muted: #2f2f35;
+  --wow-text-white: #e0e0e0;
+  --wow-text-yellow: #fff566;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #050506;
+  color: var(--wow-text-white);
+  font-family: "Roboto Condensed", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Caixa principal imitando janela in-game */
+.wow-addon-frame {
+  background-color: var(--wow-frame-bg);
+  border: 2px solid var(--wow-border-gold);
+  width: 100%;
+  max-width: 960px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.wow-header {
+  background: linear-gradient(180deg, #25252b 0%, #16161a 100%);
+  border-bottom: 1px solid var(--wow-border-gold);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addon-title {
+  color: var(--wow-text-white);
+  font-weight: bold;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+}
+
+.wow-header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.wow-lang-picker {
+  display: flex;
+  align-items: center;
+}
+
+.wow-select-sm {
+  background-color: #000;
+  color: var(--wow-text-yellow);
+  border: 1px solid var(--wow-border-muted);
+  padding: 3px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.auto-status {
+  background-color: #1b5e20;
+  color: #4caf50;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 1px solid #2e7d32;
+  border-radius: 2px;
+}
+
+.close-btn {
+  color: #888;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Divisores de Grade das Três Colunas */
+.wow-main-layout {
+  display: grid;
+  grid-template-columns: 180px 1.2fr 1.5fr;
+  background-color: #0c0c0e;
+}
+
+@media (max-width: 800px) {
+  .wow-main-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wow-column {
+  background-color: var(--wow-panel-bg);
+  border-right: 1px solid var(--wow-border-muted);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wow-column:last-child {
+  border-right: none;
+}
+
+.col-title {
+  color: #7f7f84;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--wow-border-muted);
+  padding-bottom: 4px;
+}
+
+/* Lista de Seleção de Classes com Cores Oficiais */
+.button-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.class-btn {
+  width: 100%;
+  background: #141416;
+  border: 1px solid #28282c;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.1s ease;
+}
+
+.class-btn:hover,
+.class-btn.active {
+  border-color: var(--wow-border-gold);
+  background-color: #25252b;
+}
+
+.cls-warrior {
+  color: #c79c6e;
+}
+.cls-paladin {
+  color: #f58cba;
+}
+.cls-hunter {
+  color: #abd473;
+}
+.cls-rogue {
+  color: #fff566;
+}
+.cls-priest {
+  color: #ffffff;
+}
+.cls-shaman {
+  color: #0070de;
+}
+.cls-mage {
+  color: #69ccf0;
+}
+.cls-warlock {
+  color: #9482c9;
+}
+.cls-druid {
+  color: #ff7d0a;
+}
+
+/* Subseções das Caixas Internas */
+.category-section {
+  margin-bottom: 16px;
+}
+
+.section-label {
+  display: block;
+  color: var(--wow-border-gold);
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.wow-checkbox-list {
+  background-color: var(--wow-inner-bg);
+  border: 1px solid #000;
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.wow-checkbox {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #141416;
+  cursor: pointer;
+}
+
+.wow-checkbox:last-child {
+  border-bottom: none;
+}
+
+.wow-checkbox:hover {
+  background-color: #1a1a22;
+}
+
+.wow-checkbox input {
+  margin-right: 8px;
+  accent-color: var(--wow-border-gold);
+}
+
+.empty-notice {
+  color: #555;
+  font-size: 0.85rem;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Área de Texto da Macro */
+.macro-display-panel {
+  background-color: var(--wow-inner-bg);
+  border: 1px solid var(--wow-border-muted);
+  padding: 10px;
+  margin-top: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-subtitle {
+  color: var(--wow-text-yellow);
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+#macroOutput {
+  width: 100%;
+  flex: 1;
+  min-height: 165px;
+  background-color: #040405;
+  color: #64ffda;
+  border: 1px solid #000;
+  padding: 10px;
+  font-family: "Fira Mono", monospace;
+  font-size: 0.85rem;
+  resize: none;
+  line-height: 1.4;
+}
+
+#macroOutput:focus {
+  outline: none;
+}
+
+.char-counter {
+  text-align: right;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Inputs Manuais e Utilitários de Interface Flexível */
+.wow-field label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.wow-field-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wow-field-inline label {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.wow-input {
+  width: 100%;
+  background-color: #050505;
+  border: 1px solid var(--wow-border-muted);
+  color: #fff;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.wow-input:focus {
+  outline: none;
+  border-color: var(--wow-border-gold);
+}
+
+.wow-action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.wow-btn {
+  background: linear-gradient(180deg, #4c4c4c 0%, #262626 100%);
+  border: 1px solid #5c5c5c;
+  color: #fff;
+  padding: 10px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.wow-btn.btn-gold {
+  background: linear-gradient(180deg, #a0784c 0%, #5c4328 100%);
+  border: 1px solid var(--wow-border-gold);
+  color: var(--wow-text-yellow);
+}
+
+.wow-btn:hover {
+  filter: brightness(1.2);
+}
+
+.hidden {
+  display: none !important;
+}
