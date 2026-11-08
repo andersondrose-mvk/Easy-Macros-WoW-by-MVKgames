@@ -26,7 +26,7 @@ const classSkillsDatabase = {
         { en: "Aimed Shot", pt: "Tiro Mirado", es: "Disparo de puntería", cat: "ranged", img: "https://worldofwarcraft.com" },
         { en: "Explosive Shot", pt: "Tiro Explosivo", es: "Disparo explosivo", cat: "ranged", img: "https://worldofwarcraft.com" },
         { en: "Rapid Fire", pt: "Tiro Rápido", es: "Fuego rápido", cat: "buffs", img: "https://worldofwarcraft.com" },
-        { en: "Bestial Wrath", pt: "Ira Bestial", es: "Cólera beastial", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Bestial Wrath", pt: "Ira Bestial", es: "Cólera bestial", cat: "buffs", img: "https://worldofwarcraft.com" },
         { en: "Deterrence", pt: "Dissuasão", es: "Disuasión", cat: "defensives", img: "https://worldofwarcraft.com" },
         { en: "Kill Command", pt: "Comando para Matar", es: "Matar", cat: "pet", img: "https://worldofwarcraft.com" }
     ],
@@ -71,7 +71,7 @@ const classSkillsDatabase = {
     WARLOCK: [
         { en: "Corruption", pt: "Corrupção", es: "Corrupción", cat: "ranged", img: "https://worldofwarcraft.com" },
         { en: "Curse of Agony", pt: "Maldição da Agonia", es: "Maldición de agonía", cat: "ranged", img: "https://worldofwarcraft.com" },
-{ en: "Drain Life", pt: "Drenar Vida", es: "Drenar vida", cat: "ranged", img: "worldofwarcraft.com" },
+        { en: "Drain Life", pt: "Drenar Vida", es: "Drenar vida", cat: "ranged", img: "https://worldofwarcraft.com" },
 { en: "Drain Soul", pt: "Drenar Alma", es: "Drenar alma", cat: "ranged", img: "worldofwarcraft.com" },
 { en: "Immolate", pt: "Imolação", es: "Inmolar", cat: "ranged", img: "worldofwarcraft.com" },
 { en: "Amplify Curse", pt: "Amplificar Maldição", es: "Maldición amplificada", cat: "buffs", img: "worldofwarcraft.com" },
@@ -103,6 +103,11 @@ const charCount = document.getElementById("charCount");
 const itemsFoundCounter = document.getElementById("itemsFoundCounter");
 const currentMacroName = document.getElementById("currentMacroName");
 const langSelect = document.getElementById("langSelect");
+const skillSearch = document.getElementById("skillSearch");
+// Escuta a caixa de procura de habilidades em tempo real
+skillSearch.addEventListener("input", () => {
+renderSkillsLibrary();
+});
 langSelect.addEventListener("change", () => {
 renderSkillsLibrary();
 updateMacroDisplay();
@@ -130,15 +135,22 @@ skillsGroup.innerHTML = 'Selecione uma classe à esquerda...';
 itemsFoundCounter.innerText = "0 FOUND";
 return;
 }
+const currentLang = langSelect.value;
+const searchQuery = skillSearch.value.toLowerCase().trim();
+// Filtra pela Categoria AND pela Caixa de Procura
 const filteredSkills = classSkillsDatabase[activeClass].filter(skill => {
-return activeCategory === "all" || skill.cat === activeCategory;
+const matchesCategory = (activeCategory === "all" || skill.cat === activeCategory);
+let displayName = skill.en;
+if (currentLang === "pt") displayName = skill.pt;
+if (currentLang === "es") displayName = skill.es;
+const matchesSearch = displayName.toLowerCase().includes(searchQuery);
+return matchesCategory && matchesSearch;
 });
 itemsFoundCounter.innerText = filteredSkills.length + " FOUND";
 if (filteredSkills.length === 0) {
-skillsGroup.innerHTML = 'Nenhuma habilidade encontrada nesta categoria.';
+skillsGroup.innerHTML = 'Nenhuma habilidade encontrada com os filtros aplicados.';
 return;
 }
-const currentLang = langSelect.value;
 filteredSkills.forEach((skill) => {
 const itemRow = document.createElement("div");
 itemRow.className = "library-item-row";
@@ -146,7 +158,6 @@ let displayName = skill.en;
 if (currentLang === "pt") displayName = skill.pt;
 if (currentLang === "es") displayName = skill.es;
 const classNameFormatted = activeClass.charAt(0) + activeClass.slice(1).toLowerCase();
-// Correção estrutural absoluta da renderização sem emendas de strings soltas
 itemRow.innerHTML = '' + displayName + '' + classNameFormatted + ' • ' + skill.cat.toUpperCase() + '';
 itemRow.addEventListener("click", () => {
 document.querySelectorAll(".library-item-row").forEach(r => r.classList.remove("selected-active"));
