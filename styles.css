@@ -433,3 +433,19 @@ body {
     outline: none;
     border-color: #2979ff;
 }
+footer {
+    text-align: center;
+    padding: 20px;
+    font-family: sans-serif;
+    color: #cccccc;
+    background-color: #1a1a1a;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer small {
+    color: #888888;
+    font-size: 0.85em;
+}
