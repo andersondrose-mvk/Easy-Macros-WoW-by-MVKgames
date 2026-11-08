@@ -97,15 +97,27 @@ const classSkillsDatabase = {
 
 let activeClass = "";
 let activeCategory = "all";
-let selectedSkillsSequence = [];
+let currentLanguage = "pt"; // Idioma inicial padronizado ('pt' ou 'en')
+let selectedSkillsSequence = []; // Armazena os objetos completos de skill para tradução dinâmica
 
+// Elementos DOM
 const skillsGroup = document.getElementById("skillsGroup");
 const macroOutput = document.getElementById("macroOutput");
 const charCount = document.getElementById("charCount");
 const itemsFoundCounter = document.getElementById("itemsFoundCounter");
 const currentMacroName = document.getElementById("currentMacroName");
+const langSelect = document.getElementById("langSelect"); // Certifique-se de ter um <select id="langSelect"> no HTML
 
-// 1. Seleção de Classes
+// Monitoramento da alteração de idioma
+if (langSelect) {
+    langSelect.addEventListener("change", (e) => {
+        currentLanguage = e.target.value.toLowerCase();
+        renderSkillsLibrary();
+        updateMacroDisplay();
+    });
+}
+
+// Inicialização dos botões das classes
 document.querySelectorAll(".class-btn").forEach(button => {
     button.addEventListener("click", (e) => {
         document.querySelectorAll(".class-btn").forEach(b => b.classList.remove("active"));
@@ -115,7 +127,7 @@ document.querySelectorAll(".class-btn").forEach(button => {
     });
 });
 
-// 2. Seleção de Categorias
+// Inicialização dos botões das categorias
 document.querySelectorAll(".category-btn").forEach(button => {
     button.addEventListener("click", (e) => {
         document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
@@ -125,47 +137,51 @@ document.querySelectorAll(".category-btn").forEach(button => {
     });
 });
 
-// 3. Montar a Lista Visual das Habilidades
+// Renderizador da biblioteca baseado no idioma ativo
 function renderSkillsLibrary() {
     skillsGroup.innerHTML = "";
     if (!activeClass || !classSkillsDatabase[activeClass]) {
-        skillsGroup.innerHTML = `<div class="empty-notice">Selecione uma classe à esquerda...</div>`;
+        skillsGroup.innerHTML = '<div class="empty-notice">Selecione uma classe à esquerda...</div>';
         itemsFoundCounter.innerText = "0 FOUND";
         return;
     }
 
     const filteredSkills = classSkillsDatabase[activeClass].filter(skill => {
-        return activeCategory === "all" || skill.cat === activeCategory;
-    });
-
-    itemsFoundCounter.innerText = `${filteredSkills.length} FOUND`;
-
-    if (filteredSkills.length === 0) {
-        skillsGroup.innerHTML = `<div class="empty-notice">Nenhuma habilidade encontrada nesta categoria.</div>`;
-        return;
-    }
-
-    filteredSkills.forEach((skill) => {
-        const itemRow = document.createElement("div");
-        itemRow.className = "library-item-row";
-        
-        const displayName = skill.pt || skill.en;
-        const classNameFormatted = activeClass.charAt(0) + activeClass.slice(1).toLowerCase();
-
-itemRow.innerHTML = <img src="${skill.img}" class="library-item-icon" alt="${displayName}"> <div class="library-item-info"> <div class="library-item-name">${displayName}</div> <div class="library-item-sub">${classNameFormatted} • ${skill.cat.toUpperCase()}</div> </div>;
+return activeCategory === "all" || skill.cat === activeCategory;
+});
+itemsFoundCounter.innerText = filteredSkills.length + " FOUND";
+if (filteredSkills.length === 0) {
+skillsGroup.innerHTML = 'Nenhuma habilidade encontrada nesta categoria.';
+return;
+}
+filteredSkills.forEach((skill) => {
+const itemRow = document.createElement("div");
+itemRow.className = "library-item-row";
+// Define o nome de exibição conforme idioma selecionado
+const displayName = currentLanguage === "pt" ? (skill.pt || skill.en) : (skill.en || skill.pt);
+const classNameFormatted = activeClass.charAt(0) + activeClass.slice(1).toLowerCase();
+const fallbackImg = "https://worldofwarcraft.com";
+const iconSrc = skill.img ? skill.img : fallbackImg;
+let rowContent = "";
+rowContent += '';
+rowContent += '';
+rowContent += '' + displayName + '';
+rowContent += '' + classNameFormatted + ' • ' + skill.cat.toUpperCase() + '';
+rowContent += '';
+itemRow.innerHTML = rowContent;
 itemRow.addEventListener("click", () => {
 document.querySelectorAll(".library-item-row").forEach(r => r.classList.remove("selected-active"));
 itemRow.classList.add("selected-active");
-addSkillToMacro(displayName);
+addSkillToMacro(skill);
 });
 skillsGroup.appendChild(itemRow);
 });
 }
-// 4. Lógica de Encadeamento de Macros
-function addSkillToMacro(skillName) {
-selectedSkillsSequence.push(skillName);
+function addSkillToMacro(skillObj) {
+selectedSkillsSequence.push(skillObj);
 updateMacroDisplay();
 }
+// Atualização e montagem do script final da macro considerando o idioma ativo
 function updateMacroDisplay() {
 if (selectedSkillsSequence.length === 0) {
 macroOutput.value = "";
@@ -173,32 +189,37 @@ charCount.innerText = "0";
 currentMacroName.innerText = "Selecione uma skill";
 return;
 }
-const lastSkill = selectedSkillsSequence[selectedSkillsSequence.length - 1];
-currentMacroName.innerText = lastSkill;
-let generatedText = "#showtooltip " + selectedSkillsSequence[0] + "\n";
-if (selectedSkillsSequence.length === 1) {
-generatedText += /cast ${selectedSkillsSequence[0]};
+const lastSkillObj = selectedSkillsSequence[selectedSkillsSequence.length - 1];
+const lastSkillName = currentLanguage === "pt" ? (lastSkillObj.pt || lastSkillObj.en) : (lastSkillObj.en || lastSkillObj.pt);
+currentMacroName.innerText = lastSkillName;
+// Converte toda a lista de objetos para os nomes corretos do idioma atual
+const skillNamesList = selectedSkillsSequence.map(s => currentLanguage === "pt" ? (s.pt || s.en) : (s.en || s.pt));
+let generatedText = "#showtooltip " + lastSkillName + "\n";
+if (skillNamesList.length === 1) {
+generatedText += "/cast " + skillNamesList[0];
 } else {
-generatedText += /castsequence reset=combat/target ${selectedSkillsSequence.join(", ")};
+generatedText += "/castsequence reset=combat/target " + skillNamesList.join(", ");
 }
 macroOutput.value = generatedText;
-charCount.innerText = generatedText.length;
-macroOutput.style.color = generatedText.length > 255 ? "#ef5350" : "#a3b6cc";
+charCount.innerText = String(generatedText.length);
+if (generatedText.length > 255) {
+macroOutput.style.color = "#ef5350";
+} else {
+macroOutput.style.color = "#a3b6cc";
 }
-// Botão de Limpar (CLEAR)
+}
+// Ações dos botões inferiores
 document.getElementById("btnClearMacro").addEventListener("click", () => {
 selectedSkillsSequence = [];
 document.querySelectorAll(".library-item-row").forEach(r => r.classList.remove("selected-active"));
 updateMacroDisplay();
 });
-// Botão de Copiar (SELECT CODE)
 document.getElementById("btnCopy").addEventListener("click", () => {
 if (!macroOutput.value) return;
 macroOutput.select();
 document.execCommand("copy");
 alert("Código copiado com sucesso!");
 });
-// Botão de Integração (INSERT INTO BLIZZARD)
 document.getElementById("btnInsertBlizzard").addEventListener("click", () => {
 if (!macroOutput.value) return;
 alert("Injetando macro diretamente no client de World of Warcraft...");
