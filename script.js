@@ -1,72 +1,33 @@
 const uiTranslations = {
     pt: {
         title: "FOREVER MACRO CREATOR <span class='version'>by MVK</span>",
-        langLbl: "IDIOMA:",
-        colClasses: "CLASSES",
-        colCategories: "CATEGORIAS",
-        colBuilder: "CONSTRUTOR DE MACRO",
-        skillsLbl: "Habilidades Disponíveis:",
-        modsLbl: "Modificadores Globais:",
-        emptyNotice: "Selecione uma classe à esquerda...",
-        t13: "Usar Slot Berloque 13",
-        t14: "Usar Slot Berloque 14",
-        pot: "Usar Poção Automática",
-        finalLbl: "Feitiço de Encerramento (Com GCD):",
-        scriptLbl: "Script Gerado Final",
-        btnGenerate: "GERAR COMBO",
-        btnCopy: "COPIAR CÓDIGO",
-        alertParams: "Por favor, selecione parâmetros para gerar a macro!",
-        alertCopy: "Código copiado para a área de transferência!",
-        potionItem: "Poção",
-        cdText: "CD",
-        resetLbl: "Condição de Reset:",
-        resetSecsLbl: "Tempo de Reset (em segundos):"
+        langLbl: "IDIOMA:", colClasses: "CLASSES", colCategories: "CATEGORIAS", colBuilder: "CONSTRUTOR DE MACRO",
+        skillsLbl: "Habilidades Disponíveis:", modsLbl: "Modificadores Globais:", emptyNotice: "Selecione uma classe à esquerda...",
+        t13: "Usar Slot Berloque 13", t14: "Usar Slot Berloque 14", pot: "Usar Poção Automática",
+        finalLbl: "Feitiço de Encerramento (Com GCD):", scriptLbl: "Script Gerado Final",
+        btnGenerate: "GERAR COMBO", btnCopy: "COPIAR CÓDIGO", alertParams: "Por favor, selecione parâmetros para gerar a macro!",
+        alertCopy: "Código copiado para a área de transferência!", potionItem: "Poção", cdText: "CD",
+        resetLbl: "Condição de Reset:", resetSecsLbl: "Tempo de Reset (em segundos):"
     },
     en: {
         title: "FOREVER MACRO CREATOR <span class='version'>by MVK</span>",
-        langLbl: "LANGUAGE:",
-        colClasses: "CLASSES",
-        colCategories: "CATEGORIES",
-        colBuilder: "MACRO BUILDER",
-        skillsLbl: "Available Skills:",
-        modsLbl: "Global Modifiers:",
-        emptyNotice: "Select a class on the left...",
-        t13: "Use Trinket Slot 13",
-        t14: "Use Trinket Slot 14",
-        pot: "Use Automatic Potion",
-        finalLbl: "Finishing Spell (With GCD):",
-        scriptLbl: "Final Generated Script",
-        btnGenerate: "GENERATE COMBO",
-        btnCopy: "COPY CODE",
-        alertParams: "Please select parameters to generate the macro!",
-        alertCopy: "Code copied to clipboard!",
-        potionItem: "Potion",
-        cdText: "CD",
-        resetLbl: "Reset Condition:",
-        resetSecsLbl: "Reset Time (in seconds):"
+        langLbl: "LANGUAGE:", colClasses: "CLASSES", colCategories: "CATEGORIES", colBuilder: "MACRO BUILDER",
+        skillsLbl: "Available Skills:", modsLbl: "Global Modifiers:", emptyNotice: "Select a class on the left...",
+        t13: "Use Trinket Slot 13", t14: "Use Trinket Slot 14", pot: "Use Automatic Potion",
+        finalLbl: "Finishing Spell (With GCD):", scriptLbl: "Final Generated Script",
+        btnGenerate: "GENERATE COMBO", btnCopy: "COPY CODE", alertParams: "Please select parameters to generate the macro!",
+        alertCopy: "Code copied to clipboard!", potionItem: "Potion", cdText: "CD",
+        resetLbl: "Reset Condition:", resetSecsLbl: "Reset Time (in seconds):"
     },
     es: {
         title: "FOREVER MACRO CREATOR <span class='version'>by MVK</span>",
-        langLbl: "IDIOMA:",
-        colClasses: "CLASES",
-        colCategories: "CATEGORÍAS",
-        colBuilder: "CONSTRUCTOR DE MACROS",
-        skillsLbl: "Habilidades Disponibles:",
-        modsLbl: "Modificadores Globales:",
-        emptyNotice: "Selecciona una clase a la izquierda...",
-        t13: "Usar Ranura de Abalorio 13",
-        t14: "Usar Ranura de Abalorio 14",
-        pot: "Usar Poción Automática",
-        finalLbl: "Hechizo Finalizador (Con GCD):",
-        scriptLbl: "Script Gerado Final",
-        btnGenerate: "GENERAR COMBO",
-        btnCopy: "COPIAR CÓDIGO",
-        alertParams: "¡Por favor, seleccione parâmetros para generar la macro!",
-        alertCopy: "¡Código copiado al portapapeles!",
-        potionItem: "Poción",
-        cdText: "CD",
-        resetLbl: "Condición de Reset:",
-        resetSecsLbl: "Tiempo de Reset (en segundos):"
+        langLbl: "IDIOMA:", colClasses: "CLASES", colCategories: "CATEGORÍAS", colBuilder: "CONSTRUCTOR DE MACROS",
+        skillsLbl: "Habilidades Disponibles:", modsLbl: "Modificadores Globales:", emptyNotice: "Selecciona una clase a la izquierda...",
+        t13: "Usar Ranura de Abalorio 13", t14: "Usar Ranura de Abalorio 14", pot: "Usar Poción Automática",
+        finalLbl: "Hechizo Finalizador (Con GCD):", scriptLbl: "Script Gerado Final",
+        btnGenerate: "GENERAR COMBO", btnCopy: "COPIAR CÓDIGO", alertParams: "¡Por favor, seleccione parâmetros para generar la macro!",
+        alertCopy: "¡Código copiado al portapapeles!", potionItem: "Poción", cdText: "CD",
+        resetLbl: "Condición de Reset:", resetSecsLbl: "Tiempo de Reset (en segundos):"
     }
 };
 
@@ -91,7 +52,7 @@ const classSkillsDatabase = {
     ROGUE: [
         { en: "Cold Blood", pt: "Sangue Frio", es: "Sangre fría", cd: 180, gcd: false },
         { en: "Blade Flurry", pt: "Alvo de Lâminas", es: "Aluvión de acero", cd: 120, gcd: false },
-        { en: "Adrenaline Rush", pt: "Adrenalina", es: "Subidón de adrenalina", cd: 300, gcd: false }
+        { en: "Adrenaline Rush", pt: "Adrenalina", es: "Subidón de adrenaline", cd: 300, gcd: false }
     ],
     HUNTER: [
         { en: "Rapid Fire", pt: "Tiro Rápido", es: "Fuego rápido", cd: 300, gcd: false },
@@ -126,53 +87,27 @@ const macroOutput = document.getElementById("macroOutput");
 const charCount = document.getElementById("charCount");
 
 const uiElements = {
-    title: document.getElementById("ui-title"),
-    langLbl: document.getElementById("ui-lang-lbl"),
-    colClasses: document.getElementById("ui-col-classes"),
-    colCategories: document.getElementById("ui-col-categories"),
-    colBuilder: document.getElementById("ui-col-builder"),
-    skillsLbl: document.getElementById("ui-skills-lbl"),
-    modsLbl: document.getElementById("ui-mods-lbl"),
-    t13: document.getElementById("ui-t13"),
-    t14: document.getElementById("ui-t14"),
-    pot: document.getElementById("ui-pot"),
-    finalLbl: document.getElementById("ui-final-lbl"),
-    scriptLbl: document.getElementById("ui-script-lbl"),
-    btnGenerate: document.getElementById("btnGenerate"),
-    btnCopy: document.getElementById("btnCopy"),
-    resetLbl: document.getElementById("ui-reset-lbl"),
-    resetSecsLbl: document.getElementById("ui-reset-secs-lbl")
+    title: document.getElementById("ui-title"), langLbl: document.getElementById("ui-lang-lbl"),
+    colClasses: document.getElementById("ui-col-classes"), colCategories: document.getElementById("ui-col-categories"),
+    colBuilder: document.getElementById("ui-col-builder"), skillsLbl: document.getElementById("ui-skills-lbl"),
+    modsLbl: document.getElementById("ui-mods-lbl"), t13: document.getElementById("ui-t13"),
+    t14: document.getElementById("ui-t14"), pot: document.getElementById("ui-pot"),
+    finalLbl: document.getElementById("ui-final-lbl"), scriptLbl: document.getElementById("ui-script-lbl"),
+    btnGenerate: document.getElementById("btnGenerate"), btnCopy: document.getElementById("btnCopy"),
+    resetLbl: document.getElementById("ui-reset-lbl"), resetSecsLbl: document.getElementById("ui-reset-secs-lbl")
 };
 
 function toggleResetInput() {
-    if (resetSelect.value === "seconds") {
-        resetSecsContainer.classList.remove("hidden");
-    } else {
-        resetSecsContainer.classList.add("hidden");
-    }
+    resetSecsContainer.classList.toggle("hidden", resetSelect.value !== "seconds");
 }
 
 function traduzirInterface() {
     const currentLang = langSelect.value;
     const txt = uiTranslations[currentLang];
-
-    uiElements.title.innerHTML = txt.title;
-    uiElements.langLbl.innerText = txt.langLbl;
-    uiElements.colClasses.innerText = txt.colClasses;
-    uiElements.colCategories.innerText = txt.colCategories;
-    uiElements.colBuilder.innerText = txt.colBuilder;
-    uiElements.skillsLbl.innerText = txt.skillsLbl;
-    uiElements.modsLbl.innerText = txt.modsLbl;
-    uiElements.t13.innerText = txt.t13;
-    uiElements.t14.innerText = txt.t14;
-    uiElements.pot.innerText = txt.pot;
-    uiElements.finalLbl.innerText = txt.finalLbl;
-    uiElements.scriptLbl.innerText = txt.scriptLbl;
-    uiElements.btnGenerate.innerText = txt.btnGenerate;
-    uiElements.btnCopy.innerText = txt.btnCopy;
-    uiElements.resetLbl.innerText = txt.resetLbl;
-    uiElements.resetSecsLbl.innerText = txt.resetSecsLbl;
-
+    Object.keys(uiElements).forEach(key => {
+        if(key === 'title') uiElements[key].innerHTML = txt[key];
+        else uiElements[key].innerText = txt[key];
+    });
     renderSkillsList();
 }
 
@@ -190,23 +125,16 @@ document.querySelectorAll(".class-btn").forEach(button => {
 function renderSkillsList() {
     skillsGroup.innerHTML = "";
     const currentLang = langSelect.value;
-
     if (!activeClass) {
         skillsGroup.innerHTML = `<div class="empty-notice">${uiTranslations[currentLang].emptyNotice}</div>`;
         return;
     }
-
     classSkillsDatabase[activeClass].forEach((skill, idx) => {
         const label = document.createElement("label");
         label.className = "wow-checkbox";
-        
         const mainName = skill[currentLang] || skill.en;
         const cdText = skill.cd > 0 ? ` [${skill.cd}s ${uiTranslations[currentLang].cdText}]` : ` [No ${uiTranslations[currentLang].cdText}]`;
-        
-        label.innerHTML = `
-            <input type="checkbox" value="${idx}">
-            ${mainName} <span style="color:#555; font-size:0.75rem">${cdText}</span>
-        `;
+        label.innerHTML = `<input type="checkbox" value="${idx}"> ${mainName} <span style="color:#555; font-size:0.75rem">${cdText}</span>`;
         skillsGroup.appendChild(label);
     });
 }
@@ -223,47 +151,45 @@ document.getElementById("btnGenerate").addEventListener("click", () => {
     if (checkedBoxes.length === 0 && !useTrinket13 && !useTrinket14 && !usePotion && !finalSkill) {
         alert(txt.alertParams);
         return;
-        }
-        let macroLines = ["#showtooltip"];
-        let castSequenceList = [];
-        checkedBoxes.forEach(box => {
+    }
+
+    let macroLines = ["#showtooltip"];
+    let castSequenceList = [];
+
+    checkedBoxes.forEach(box => {
         const skillIdx = box.value;
         const skillObj = classSkillsDatabase[activeClass][skillIdx];
         const localizedName = skillObj[currentLang] || skillObj.en;
         if (skillObj.gcd) {
-        castSequenceList.push(localizedName);
+            castSequenceList.push(localizedName);
         } else {
-        macroLines.push(/cast ${localizedName});
+            macroLines.push("/cast " + localizedName);
         }
-        });
-        if (useTrinket13) macroLines.push("/use 13");
-        if (useTrinket14) macroLines.push("/use 14");
-        if (usePotion) macroLines.push(/use ${txt.potionItem});
-        let resetRule = resetSelect.value;
-        if (resetRule === "seconds") {
-        const secondsVal = document.getElementById("resetSeconds").value || "5";
-        resetRule = secondsVal;
-        }
-        if (castSequenceList.length > 0) {
+    });
+
+    if (useTrinket13) macroLines.push("/use 13");
+    if (useTrinket14) macroLines.push("/use 14");
+    if (usePotion) macroLines.push("/use " + txt.potionItem);
+
+    let resetRule = resetSelect.value === "seconds" ? (document.getElementById("resetSeconds").value || "5") : resetSelect.value;
+
+    if (castSequenceList.length > 0) {
         if (finalSkill !== "") castSequenceList.push(finalSkill);
-        macroLines.push(/castsequence reset=${resetRule} ${castSequenceList.join(", ")});
-        } else if (finalSkill !== "") {
-        macroLines.push(/cast ${finalSkill});
-        }
-        const finalText = macroLines.join("\n");
-        macroOutput.value = finalText;
-        charCount.innerText = finalText.length;
-        if (finalText.length > 255) {
-        macroOutput.style.color = "#ef5350";
-        } else {
-        macroOutput.style.color = "#64ffda";
-        }
-        });
-        document.getElementById("btnCopy").addEventListener("click", () => {
-        if (!macroOutput.value) return;
-        macroOutput.select();
-        document.execCommand("copy");
-        alert(uiTranslations[langSelect.value].alertCopy);
-        });
-        window.toggleResetInput = toggleResetInput;
-        traduzirInterface();
+        macroLines.push("/castsequence reset=" + resetRule + " " + castSequenceList.join(", "));
+    } else if (finalSkill !== "") {
+        macroLines.push("/cast " + finalSkill);
+    }
+
+    const finalText = macroLines.join("\n");
+macroOutput.value = finalText;
+charCount.innerText = finalText.length;
+macroOutput.style.color = finalText.length > 255 ? "#ef5350" : "#64ffda";
+});
+document.getElementById("btnCopy").addEventListener("click", () => {
+if (!macroOutput.value) return;
+macroOutput.select();
+document.execCommand("copy");
+alert(uiTranslations[langSelect.value].alertCopy);
+});
+window.toggleResetInput = toggleResetInput;
+traduzirInterface();
