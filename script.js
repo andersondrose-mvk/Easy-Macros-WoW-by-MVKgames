@@ -1,5 +1,7 @@
 /* cspell:disable-file */
 
+/* cspell:disable-file */
+
 const classSkillsDatabase = {
     WARRIOR: [
         { en: "Charge", pt: "Investida", es: "Cargar", cat: "abilities", img: "https://worldofwarcraft.com" },
