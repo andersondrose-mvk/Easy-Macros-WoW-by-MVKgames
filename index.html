@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Macro WoW by MVK</title>
+    <title>FOREVER MACRO CREATOR</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
 
     <div class="wow-addon-frame">
-        <!-- Header / Cabeçalho -->
+        <!-- Cabeçalho -->
         <header class="wow-header">
-            <h1 class="addon-title" id="ui-title">FOREVER MACRO CREATOR <span class="version">by MVK</span></h1>
+            <div class="addon-title-group">
+                <img src="https://worldofwarcraft.com" class="header-logo" alt="WoW Logo">
+                <h1 class="addon-title">FOREVER MACRO CREATOR <span class="sub-nav">SEARCH • SELECT • INSERT</span></h1>
+            </div>
             <div class="wow-header-right">
-                <div class="wow-lang-picker">
-                    <label for="langSelect" id="ui-lang-lbl" style="margin-right: 5px; font-size: 0.8rem; font-weight: bold;">IDIOMA:</label>
-                    <select id="langSelect" class="wow-select-sm">
-                        <option value="pt" selected>Português</option>
-                        <option value="en">English</option>
-                        <option value="es">Espanhol</option>
-                    </select>
-                </div>
                 <div class="auto-status">AUTO: ON</div>
+                <button class="close-btn">×</button>
             </div>
         </header>
 
-        <!-- Layout Principal -->
+        <!-- Barra de Busca e Controle -->
+        <div class="search-bar-row">
+            <div class="search-box-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="skillSearch" placeholder="Procure por habilidades..." readonly>
+            </div>
+            <button class="wow-btn-clear" id="btnClearMacro">CLEAR</button>
+        </div>
+
+        <!-- Grade de Três Colunas -->
         <main class="wow-main-layout">
             
             <!-- Coluna 1: Classes -->
-            <section class="wow-column">
-                <h2 class="col-title" id="ui-col-classes">CLASSES</h2>
+            <section class="wow-column column-borders">
+                <h2 class="col-title">CLASSES</h2>
                 <div class="button-list">
                     <button class="class-btn cls-warrior" data-class="WARRIOR">WARRIOR</button>
                     <button class="class-btn cls-paladin" data-class="PALADIN">PALADIN</button>
@@ -42,75 +47,60 @@
                     <button class="class-btn cls-mage" data-class="MAGE">MAGE</button>
                     <button class="class-btn cls-warlock" data-class="WARLOCK">WARLOCK</button>
                     <button class="class-btn cls-druid" data-class="DRUID">DRUID</button>
+                    <button class="class-btn cls-consumables" data-class="CONSUMABLES">CONSUMABLES</button>
                 </div>
             </section>
 
-            <!-- Coluna 2: Categorias e Habilidades -->
-            <section class="wow-column">
-                <h2 class="col-title" id="ui-col-categories">CATEGORIAS</h2>
-                
-                <div class="category-section">
-                    <span class="section-label" id="ui-skills-lbl">Habilidades Disponíveis:</span>
-                    <div class="wow-checkbox-list" id="skillsGroup">
-                        <div class="empty-notice">Selecione uma classe à esquerda...</div>
-                    </div>
-                </div>
-
-                <div class="category-section">
-                    <span class="section-label" id="ui-mods-lbl">Modificadores Globais:</span>
-                    <div class="wow-checkbox-list">
-                        <label class="wow-checkbox">
-                            <input type="checkbox" id="useTrinket13">
-                            <img src="https://worldofwarcraft.com" class="skill-icon-mini" alt="Trinket 13">
-                            <span id="ui-t13">Usar Slot Berloque 13</span>
-                        </label>
-                        <label class="wow-checkbox">
-                            <input type="checkbox" id="useTrinket14">
-                            <img src="https://worldofwarcraft.com" class="skill-icon-mini" alt="Trinket 14">
-                            <span id="ui-t14">Usar Slot Berloque 14</span>
-                        </label>
-                        <label class="wow-checkbox">
-                            <input type="checkbox" id="usePotion">
-                            <img src="https://worldofwarcraft.com" class="skill-icon-mini" alt="Potion">
-                            <span id="ui-pot">Usar Poção Automática</span>
-                        </label>
-                    </div>
+            <!-- Coluna 2: Categorias -->
+            <section class="wow-column column-borders">
+                <h2 class="col-title">CATEGORIES</h2>
+                <div class="button-list" id="categoriesGroup">
+                    <button class="category-btn active" data-cat="all">All Macros</button>
+                    <button class="category-btn" data-cat="abilities">Abilities</button>
+                    <button class="category-btn" data-cat="buffs">Buffs</button>
+                    <button class="category-btn" data-cat="control">Control</button>
+                    <button class="category-btn" data-cat="defensives">Defensives</button>
+                    <button class="category-btn" data-cat="learned">Learned Abilities</button>
+                    <button class="category-btn" data-cat="other">Other Items</button>
+                    <button class="category-btn" data-cat="pet">Pet</button>
+                    <button class="category-btn" data-cat="potions">Potions</button>
+                    <button class="category-btn" data-cat="ranged">Ranged Attacks</button>
+                    <button class="category-btn" data-cat="targeting">Targeting</button>
+                    <button class="category-btn" data-cat="utility">Utility</button>
                 </div>
             </section>
 
-            <!-- Coluna 3: Construtor de Macros -->
-            <section class="wow-column">
-                <h2 class="col-title" id="ui-col-builder">CONSTRUTOR DE MACRO</h2>
+            <!-- Coluna 3: Lista de Encontros e Editor -->
+            <section class="wow-column main-content-col">
+                <div class="library-header">
+                    <h2 class="col-title">MACRO LIBRARY</h2>
+                    <span class="found-counter" id="itemsFoundCounter">0 FOUND</span>
+                </div>
                 
-                <div class="category-section wow-field">
-                    <label for="resetSelect" id="ui-reset-lbl" style="font-weight: bold;">Condição de Reset:</label>
-                    <select id="resetSelect" class="wow-input" onchange="toggleResetInput()">
-                        <option value="combat/target">Combat / Target</option>
-                        <option value="combat">Combat</option>
-                        <option value="target">Target</option>
-                        <option value="seconds">Segundos / Seconds</option>
-                    </select>
+                <!-- Lista de Habilidades Dinâmicas -->
+                <div class="macro-library-list" id="skillsGroup">
+                    <div class="empty-notice">Selecione uma classe à esquerda...</div>
                 </div>
 
-                <div class="category-section wow-field hidden" id="resetSecsContainer">
-                    <label for="resetSeconds" id="ui-reset-secs-lbl" style="font-weight: bold;">Tempo de Reset (em segundos):</label>
-                    <input type="number" id="resetSeconds" class="wow-input" value="5" min="1">
-                </div>
+                <!-- Painel Inferior de Código Construído -->
+                <div class="macro-builder-bottom-panel">
+                    <div class="macro-meta-info">
+                        <span class="current-macro-name" id="currentMacroName">Selecione uma skill</span>
+                        <div class="char-counter"><span id="charCount">0</span> / 255</div>
+                    </div>
 
-                <div class="category-section wow-field">
-                    <label for="finalSkill" id="ui-final-lbl" style="font-weight: bold;">Feitiço de Encerramento (Com GCD):</label>
-                    <input type="text" id="finalSkill" class="wow-input" placeholder="Ex: Shadow Bolt">
-                </div>
+                    <div class="output-container">
+                        <textarea id="macroOutput" readonly placeholder="#showtooltip\nMonte sua sequência clicando nos cards acima..."></textarea>
+                        <div class="output-side-indicators">
+                            <div class="indicator-box">🗚</div>
+                            <div class="indicator-box">🗛</div>
+                        </div>
+                    </div>
 
-                <div class="macro-display-panel">
-                    <span class="panel-subtitle" id="ui-script-lbl">Script Gerado Final</span>
-                    <textarea id="macroOutput" readonly></textarea>
-                    <div class="char-counter"><span id="charCount">0</span> / 255</div>
-                </div>
-
-                <div class="wow-action-row">
-                    <button class="wow-btn btn-gold" id="btnGenerate">GERAR COMBO</button>
-                    <button class="wow-btn" id="btnCopy">COPIAR CÓDIGO</button>
+                    <div class="wow-action-row">
+                        <button class="wow-btn-addon" id="btnCopy">SELECT CODE</button>
+                        <button class="wow-btn-addon" id="btnInsertBlizzard">INSERT INTO BLIZZARD</button>
+                    </div>
                 </div>
             </section>
 

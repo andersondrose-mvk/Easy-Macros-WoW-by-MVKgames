@@ -1,196 +1,205 @@
-const uiTranslations = {
-    pt: {
-        title: "FOREVER MACRO CREATOR <span class='version'>by MVK</span>",
-        langLbl: "IDIOMA:", colClasses: "CLASSES", colCategories: "CATEGORIAS", colBuilder: "CONSTRUTOR DE MACRO",
-        skillsLbl: "Habilidades Disponíveis:", modsLbl: "Modificadores Globais:", emptyNotice: "Selecione uma classe à esquerda...",
-        t13: "Usar Slot Berloque 13", t14: "Usar Slot Berloque 14", pot: "Usar Poção Automática",
-        finalLbl: "Feitiço de Encerramento (Com GCD):", scriptLbl: "Script Gerado Final",
-        btnGenerate: "GERAR COMBO", btnCopy: "COPIAR CÓDIGO", alertParams: "Por favor, selecione parâmetros para gerar a macro!",
-        alertCopy: "Código copiado para a área de transferência!", potionItem: "Poção", cdText: "CD",
-        resetLbl: "Condição de Reset:", resetSecsLbl: "Tempo de Reset (em segundos):"
-    },
-    en: {
-        title: "FOREVER MACRO CREATOR <span class='version'>by MVK</span>",
-        langLbl: "LANGUAGE:", colClasses: "CLASSES", colCategories: "CATEGORIES", colBuilder: "MACRO BUILDER",
-        skillsLbl: "Available Skills:", modsLbl: "Global Modifiers:", emptyNotice: "Select a class on the left...",
-        t13: "Use Trinket Slot 13", t14: "Use Trinket Slot 14", pot: "Use Automatic Potion",
-        finalLbl: "Finishing Spell (With GCD):", scriptLbl: "Final Generated Script",
-        btnGenerate: "GENERATE COMBO", btnCopy: "COPY CODE", alertParams: "Please select parameters to generate the macro!",
-        alertCopy: "Code clipboard!", potionItem: "Potion", cdText: "CD",
-        resetLbl: "Reset Condition:", resetSecsLbl: "Reset Time (in seconds):"
-    },
-    es: {
-        title: "FOREVER MACRO CREATOR <span class='version'>by MVK</span>",
-        langLbl: "IDIOMA:", colClasses: "CLASES", colCategories: "CATEGORÍAS", colBuilder: "CONSTRUCTOR DE MACROS",
-        skillsLbl: "Habilidades Disponibles:", modsLbl: "Modificadores Globales:", emptyNotice: "Selecciona una clase a la izquierda...",
-        t13: "Usar Ranura de Abalorio 13", t14: "Usar Ranura de Abalorio 14", pot: "Usar Poción Automática",
-        finalLbl: "Hechizo Finalizador (Con GCD):", scriptLbl: "Script Gerado Final",
-        btnGenerate: "GENERAR COMBO", btnCopy: "COPIAR CÓDIGO", alertParams: "¡Por favor, seleccione parâmetros para generar la macro!",
-        alertCopy: "¡Código copiado al portapapeles!", potionItem: "Poción", cdText: "CD",
-        resetLbl: "Condición de Reset:", resetSecsLbl: "Tiempo de Reset (en segundos):"
-    }
-};
+/* cspell:disable-file */
 
 const classSkillsDatabase = {
     WARRIOR: [
-        { en: "Death Wish", pt: "Desejo de Morte", es: "Deseo de la Muerte", cd: 180, gcd: false },
-        { en: "Recklessness", pt: "Temeridade", es: "Temeridad", cd: 1800, gcd: false },
-        { en: "Bloodrage", pt: "Raiva Sangrenta", es: "Ira sangrienta", cd: 60, gcd: false },
-        { en: "Heroic Strike", pt: "Golpe Heroico", es: "Golpe heroico", cd: 0, gcd: false },
-        { en: "Blood Fury", pt: "Fúria Sangrenta", es: "Furia sangrienta", cd: 120, gcd: false }
+        { en: "Charge", pt: "Investida", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Mortal Strike", pt: "Golpe Mortal", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Bloodthirst", pt: "Sede de Sangue", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Overpower", pt: "Prevalecer", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Death Wish", pt: "Desejo de Morte", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Recklessness", pt: "Temeridade", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Shield Block", pt: "Bloqueio com Escudo", cat: "defensives", img: "https://worldofwarcraft.com" },
+        { en: "Bloodrage", pt: "Raiva Sangrenta", cat: "utility", img: "https://worldofwarcraft.com" }
     ],
     PALADIN: [
-        { en: "Avenging Wrath", pt: "Ira Vingativa", es: "Cólera vengativa", cd: 180, gcd: false },
-        { en: "Divine Illumination", pt: "Iluminação Divina", es: "Iluminación divina", cd: 180, gcd: false },
-        { en: "Divine Favor", pt: "Favor Divino", es: "Favor divino", cd: 120, gcd: false }
-    ],
-    MAGE: [
-        { en: "Arcane Power", pt: "Poder Arcano", es: "Poder arcano", cd: 120, gcd: false },
-        { en: "Icy Veins", pt: "Veias Geladas", es: "Venas heladas", cd: 180, gcd: false },
-        { en: "Presence of Mind", pt: "Presença de Espírito", es: "Presencia de la mente", cd: 180, gcd: false }
-    ],
-    ROGUE: [
-        { en: "Cold Blood", pt: "Sangue Frio", es: "Sangre fría", cd: 180, gcd: false },
-        { en: "Blade Flurry", pt: "Alvo de Lâminas", es: "Aluvión de acero", cd: 120, gcd: false },
-        { en: "Adrenaline Rush", pt: "Adrenalina", es: "Subidón de adrenaline", cd: 300, gcd: false }
+        { en: "Crusader Strike", pt: "Golpe do Cruzado", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Judgement", pt: "Julgamento", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Divine Storm", pt: "Tempestade Divina", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Avenging Wrath", pt: "Ira Vingativa", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Divine Illumination", pt: "Iluminação Divina", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Divine Shield", pt: "Escudo Divino", cat: "defensives", img: "https://worldofwarcraft.com" },
+        { en: "Hammer of Justice", pt: "Martelo da Justiça", cat: "control", img: "https://worldofwarcraft.com" }
     ],
     HUNTER: [
-        { en: "Rapid Fire", pt: "Tiro Rápido", es: "Fuego rápido", cd: 300, gcd: false },
-        { en: "Bestial Wrath", pt: "Ira Bestial", es: "Cólera bestial", cd: 120, gcd: false },
-        { en: "Readiness", pt: "Prontidão", es: "Disposición", cd: 300, gcd: false }
+        { en: "Steady Shot", pt: "Tiro Firme", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Multi-Shot", pt: "Tiro Múltiplo", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Aimed Shot", pt: "Tiro Mirado", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Explosive Shot", pt: "Tiro Explosivo", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Rapid Fire", pt: "Tiro Rápido", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Bestial Wrath", pt: "Ira Bestial", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Deterrence", pt: "Dissuasão", cat: "defensives", img: "https://worldofwarcraft.com" },
+        { en: "Kill Command", pt: "Comando para Matar", cat: "pet", img: "https://worldofwarcraft.com" }
     ],
-    SHAMAN: [
-        { en: "Elemental Mastery", pt: "Maestria Elemental", es: "Maestría elemental", cd: 180, gcd: false },
-        { en: "Nature's Swiftness", pt: "Celeridade da Natureza", es: "Presteza de la naturaleza", cd: 180, gcd: false }
-    ],
-    DRUID: [
-        { en: "Nature's Swiftness", pt: "Celeridade da Natureza", es: "Presteza de la naturaleza", cd: 180, gcd: false },
-        { en: "Tiger's Fury", pt: "Fúria do Tigre", es: "Furia del tigre" , cd: 6, gcd: false }
-    ],
-    WARLOCK: [
-        { en: "Amplified Curse", pt: "Amplificar Maldição", es: "Maldición amplificada", cd: 180, gcd: false },
-        { en: "Curse of Agony", pt: "Maldição da Agonia", es: "Maldición de agonía", cd: 0, gcd: true },
-        { en: "Corruption", pt: "Corrupção", es: "Corrupción", cd: 0, gcd: true }
+    ROGUE: [
+        { en: "Sinister Strike", pt: "Golpe Sinistro", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Mutilate", pt: "Mutilar", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Eviscerate", pt: "Eviscerar", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Envenom", pt: "Envenenar", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Adrenaline Rush", pt: "Adrenalina", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Cold Blood", pt: "Sangue Frio", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Evasion", pt: "Evasão", cat: "defensives", img: "https://worldofwarcraft.com" },
+        { en: "Kidney Shot", pt: "Golpe no Rim", cat: "control", img: "https://worldofwarcraft.com" }
     ],
     PRIEST: [
-        { en: "Inner Focus", pt: "Foco Interno", es: "Enfoque interno", cd: 180, gcd: false },
-        { en: "Power Infusion", pt: "Infusão de Poder", es: "Infusión de poder", cd: 180, gcd: false }
+        { en: "Mind Flay", pt: "Açoite Mental", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Mind Blast", pt: "Impacto Mental", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Shadow Word: Pain", pt: "Palavra das Sombras: Dor", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Vampiric Touch", pt: "Toque Vampírico", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Power Infusion", pt: "Infusão de Poder", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Inner Focus", pt: "Foco Interno", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Psychic Scream", pt: "Grito Psíquico", cat: "control", img: "https://worldofwarcraft.com" },
+        { en: "Dispersion", pt: "Dispersão", cat: "defensives", img: "https://worldofwarcraft.com" }
+    ],
+    SHAMAN: [
+        { en: "Lightning Bolt", pt: "Raio", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Lava Burst", pt: "Estouro de Lava", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Stormstrike", pt: "Ataque da Tempestade", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Lava Lash", pt: "Açoite de Lava", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Elemental Mastery", pt: "Maestria Elemental", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Shamanistic Rage", pt: "Raiva Xamânica", cat: "defensives", img: "https://worldofwarcraft.com" },
+        { en: "Hex", pt: "Praga", cat: "control", img: "https://worldofwarcraft.com" }
+    ],
+    MAGE: [
+        { en: "Frostbolt", pt: "Seta de Gelo", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Fireball", pt: "Bola de Fogo", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Arcane Blast", pt: "Impacto Arcano", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Arcane Power", pt: "Poder Arcano", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Icy Veins", pt: "Veias Geladas", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Ice Block", pt: "Bloco de Gelo", cat: "defensives", img: "https://worldofwarcraft.com" },
+        { en: "Polymorph", pt: "Polimorfia", cat: "control", img: "https://worldofwarcraft.com" }
+    ],
+    WARLOCK: [
+        { en: "Corruption", pt: "Corrupção", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Curse of Agony", pt: "Maldição da Agonia", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Drain Life", pt: "Drenar Vida", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Drain Soul", pt: "Drenar Alma", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Immolate", pt: "Imolação", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Amplify Curse", pt: "Amplificar Maldição", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Fear", pt: "Medo", cat: "control", img: "https://worldofwarcraft.com" },
+        { en: "Demonic Empowerment", pt: "Empoderamento Demoníaco", cat: "pet", img: "https://worldofwarcraft.com" }
+    ],
+    DRUID: [
+        { en: "Wrath", pt: "Ira", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Starfire", pt: "Fogo Estelar", cat: "ranged", img: "https://worldofwarcraft.com" },
+        { en: "Shred", pt: "Despedaçar", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Mangle", pt: "Mutilar", cat: "abilities", img: "https://worldofwarcraft.com" },
+        { en: "Tiger's Fury", pt: "Fúria do Tigre", cat: "buffs", img: "https://worldofwarcraft.com" },
+        { en: "Barkskin", pt: "Pele de Árvore", cat: "defensives", img: "https://worldofwarcraft.com" },
+        { en: "Cyclone", pt: "Ciclone", cat: "control", img: "https://worldofwarcraft.com" }
+    ],
+    CONSUMABLES: [
+        { en: "Runic Healing Potion", pt: "Poção de Cura Rúnica", cat: "potions", img: "https://worldofwarcraft.com" },
+        { en: "Runic Mana Potion", pt: "Poção de Mana Rúnica", cat: "potions", img: "https://worldofwarcraft.com" },
+        { en: "Potion of Speed", pt: "Poção de Velocidade", cat: "potions", img: "https://worldofwarcraft.com" },
+        { en: "Flame Cap", pt: "Gorro de Chama", cat: "other", img: "https://worldofwarcraft.com" }
     ]
 };
 
 let activeClass = "";
-const langSelect = document.getElementById("langSelect");
-const resetSelect = document.getElementById("resetSelect");
-const resetSecsContainer = document.getElementById("resetSecsContainer");
+let activeCategory = "all";
+let selectedSkillsSequence = [];
+
 const skillsGroup = document.getElementById("skillsGroup");
 const macroOutput = document.getElementById("macroOutput");
 const charCount = document.getElementById("charCount");
+const itemsFoundCounter = document.getElementById("itemsFoundCounter");
+const currentMacroName = document.getElementById("currentMacroName");
 
-const uiElements = {
-    title: document.getElementById("ui-title"), langLbl: document.getElementById("ui-lang-lbl"),
-    colClasses: document.getElementById("ui-col-classes"), colCategories: document.getElementById("ui-col-categories"),
-    colBuilder: document.getElementById("ui-col-builder"), skillsLbl: document.getElementById("ui-skills-lbl"),
-    modsLbl: document.getElementById("ui-mods-lbl"), t13: document.getElementById("ui-t13"),
-    t14: document.getElementById("ui-t14"), pot: document.getElementById("ui-pot"),
-    finalLbl: document.getElementById("ui-final-lbl"), scriptLbl: document.getElementById("ui-script-lbl"),
-    btnGenerate: document.getElementById("btnGenerate"), btnCopy: document.getElementById("btnCopy"),
-    resetLbl: document.getElementById("ui-reset-lbl"), resetSecsLbl: document.getElementById("ui-reset-secs-lbl")
-};
-
-function toggleResetInput() {
-    resetSecsContainer.classList.toggle("hidden", resetSelect.value !== "seconds");
-}
-
-function traduzirInterface() {
-    const currentLang = langSelect.value;
-    const txt = uiTranslations[currentLang];
-    Object.keys(uiElements).forEach(key => {
-        if(uiElements[key]) {
-            if(key === 'title') uiElements[key].innerHTML = txt[key];
-            else uiElements[key].innerText = txt[key];
-        }
-    });
-    renderSkillsList();
-}
-
-langSelect.addEventListener("change", traduzirInterface);
-
+// 1. Seleção de Classes
 document.querySelectorAll(".class-btn").forEach(button => {
     button.addEventListener("click", (e) => {
         document.querySelectorAll(".class-btn").forEach(b => b.classList.remove("active"));
         e.currentTarget.classList.add("active");
         activeClass = e.currentTarget.getAttribute("data-class");
-        renderSkillsList();
+        renderSkillsLibrary();
     });
 });
 
-function renderSkillsList() {
+// 2. Seleção de Categorias
+document.querySelectorAll(".category-btn").forEach(button => {
+    button.addEventListener("click", (e) => {
+        document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
+        e.currentTarget.classList.add("active");
+        activeCategory = e.currentTarget.getAttribute("data-cat");
+        renderSkillsLibrary();
+    });
+});
+
+// 3. Montar a Lista Visual das Habilidades
+function renderSkillsLibrary() {
     skillsGroup.innerHTML = "";
-    const currentLang = langSelect.value;
-    if (!activeClass) {
-        skillsGroup.innerHTML = `<div class="empty-notice">${uiTranslations[currentLang].emptyNotice}</div>`;
-        return;
-    }
-    classSkillsDatabase[activeClass].forEach((skill, idx) => {
-        const label = document.createElement("label");
-        label.className = "wow-checkbox";
-        const mainName = skill[currentLang] || skill.en;
-        const cdText = skill.cd > 0 ? ` [${skill.cd}s ${uiTranslations[currentLang].cdText}]` : ` [No ${uiTranslations[currentLang].cdText}]`;
-        label.innerHTML = `<input type="checkbox" value="${idx}"> ${mainName} <span style="color:#555; font-size:0.75rem">${cdText}</span>`;
-        skillsGroup.appendChild(label);
-    });
-}
-
-document.getElementById("btnGenerate").addEventListener("click", () => {
-    const currentLang = langSelect.value;
-    const txt = uiTranslations[currentLang];
-    const checkedBoxes = document.querySelectorAll("#skillsGroup input:checked");
-    const useTrinket13 = document.getElementById("useTrinket13").checked;
-    const useTrinket14 = document.getElementById("useTrinket14").checked;
-    const usePotion = document.getElementById("usePotion").checked;
-    const finalSkill = document.getElementById("finalSkill").value.trim();
-
-    if (checkedBoxes.length === 0 && !useTrinket13 && !useTrinket14 && !usePotion && !finalSkill) {
-        alert(txt.alertParams);
+    if (!activeClass || !classSkillsDatabase[activeClass]) {
+        skillsGroup.innerHTML = `<div class="empty-notice">Selecione uma classe à esquerda...</div>`;
+        itemsFoundCounter.innerText = "0 FOUND";
         return;
     }
 
-    let macroLines = ["#showtooltip"];
-    let castSequenceList = [];
-
-    checkedBoxes.forEach(box => {
-        const skillIdx = box.value;
-        const skillObj = classSkillsDatabase[activeClass][skillIdx];
-        const localizedName = skillObj[currentLang] || skillObj.en;
-        if (skillObj.gcd) {
-            castSequenceList.push(localizedName);
-        } else {
-            macroLines.push("/cast " + localizedName);
-        }
+    const filteredSkills = classSkillsDatabase[activeClass].filter(skill => {
+        return activeCategory === "all" || skill.cat === activeCategory;
     });
 
-    if (useTrinket13) macroLines.push("/use 13");
-    if (useTrinket14) macroLines.push("/use 14");
-    if (usePotion) macroLines.push("/use " + txt.potionItem);
+    itemsFoundCounter.innerText = `${filteredSkills.length} FOUND`;
 
-    let resetRule = resetSelect.value === "seconds" ? (document.getElementById("resetSeconds").value || "5") : resetSelect.value;
-
-    if (castSequenceList.length > 0) {
-        if (finalSkill !== "") castSequenceList.push(finalSkill);
-        macroLines.push("/castsequence reset=" + resetRule + " " + castSequenceList.join(", "));
-    } else if (finalSkill !== "") {
-        macroLines.push("/cast " + finalSkill);
+    if (filteredSkills.length === 0) {
+        skillsGroup.innerHTML = `<div class="empty-notice">Nenhuma habilidade encontrada nesta categoria.</div>`;
+        return;
     }
-const finalText = macroLines.join("\n");
-macroOutput.value = finalText;
-charCount.innerText = finalText.length;
-macroOutput.style.color = finalText.length > 255 ? "#ef5350" : "#64ffda";
+
+    filteredSkills.forEach((skill) => {
+        const itemRow = document.createElement("div");
+        itemRow.className = "library-item-row";
+        
+        const displayName = skill.pt || skill.en;
+        const classNameFormatted = activeClass.charAt(0) + activeClass.slice(1).toLowerCase();
+
+itemRow.innerHTML = <img src="${skill.img}" class="library-item-icon" alt="${displayName}"> <div class="library-item-info"> <div class="library-item-name">${displayName}</div> <div class="library-item-sub">${classNameFormatted} • ${skill.cat.toUpperCase()}</div> </div>;
+itemRow.addEventListener("click", () => {
+document.querySelectorAll(".library-item-row").forEach(r => r.classList.remove("selected-active"));
+itemRow.classList.add("selected-active");
+addSkillToMacro(displayName);
 });
+skillsGroup.appendChild(itemRow);
+});
+}
+// 4. Lógica de Encadeamento de Macros
+function addSkillToMacro(skillName) {
+selectedSkillsSequence.push(skillName);
+updateMacroDisplay();
+}
+function updateMacroDisplay() {
+if (selectedSkillsSequence.length === 0) {
+macroOutput.value = "";
+charCount.innerText = "0";
+currentMacroName.innerText = "Selecione uma skill";
+return;
+}
+const lastSkill = selectedSkillsSequence[selectedSkillsSequence.length - 1];
+currentMacroName.innerText = lastSkill;
+let generatedText = "#showtooltip " + selectedSkillsSequence[0] + "\n";
+if (selectedSkillsSequence.length === 1) {
+generatedText += /cast ${selectedSkillsSequence[0]};
+} else {
+generatedText += /castsequence reset=combat/target ${selectedSkillsSequence.join(", ")};
+}
+macroOutput.value = generatedText;
+charCount.innerText = generatedText.length;
+macroOutput.style.color = generatedText.length > 255 ? "#ef5350" : "#a3b6cc";
+}
+// Botão de Limpar (CLEAR)
+document.getElementById("btnClearMacro").addEventListener("click", () => {
+selectedSkillsSequence = [];
+document.querySelectorAll(".library-item-row").forEach(r => r.classList.remove("selected-active"));
+updateMacroDisplay();
+});
+// Botão de Copiar (SELECT CODE)
 document.getElementById("btnCopy").addEventListener("click", () => {
 if (!macroOutput.value) return;
 macroOutput.select();
 document.execCommand("copy");
-alert(uiTranslations[langSelect.value].alertCopy);
+alert("Código copiado com sucesso!");
 });
-window.toggleResetInput = toggleResetInput;
-traduzirInterface();
+// Botão de Integração (INSERT INTO BLIZZARD)
+document.getElementById("btnInsertBlizzard").addEventListener("click", () => {
+if (!macroOutput.value) return;
+alert("Injetando macro diretamente no client de World of Warcraft...");
+});
