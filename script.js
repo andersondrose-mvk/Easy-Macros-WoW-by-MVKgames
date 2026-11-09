@@ -160,7 +160,23 @@ function fetchSkillIcon(skill) {
 
 function loadSkillIcon(image, skill) {
     fetchSkillIcon(skill).then(function(iconUrl) {
-        image.src = iconUrl;
+        if (iconUrl === defaultSkillIcon) {
+            image.src = defaultSkillIcon;
+            return;
+        }
+
+        const iconFileName = iconUrl.slice(iconUrl.lastIndexOf("/") + 1);
+        let localIconFailed = false;
+        image.onerror = function() {
+            if (!localIconFailed) {
+                localIconFailed = true;
+                image.src = iconUrl;
+                return;
+            }
+            image.onerror = null;
+            image.src = defaultSkillIcon;
+        };
+        image.src = "public/icons/" + iconFileName;
     });
 }
 
@@ -315,9 +331,6 @@ icon.alt = "";
 icon.loading = "lazy";
 icon.decoding = "async";
 icon.setAttribute("aria-hidden", "true");
-icon.addEventListener("error", function() {
-    if (icon.src !== defaultSkillIcon) icon.src = defaultSkillIcon;
-});
 const itemInfo = document.createElement("span");
 itemInfo.className = "library-item-info";
 const nameLabel = document.createElement("span");

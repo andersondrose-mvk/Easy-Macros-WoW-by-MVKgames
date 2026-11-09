@@ -1,0 +1,1130 @@
+[
+  {
+    "name": "Charge",
+    "class": "WARRIOR",
+    "spell_id": 100,
+    "icon": "Ability_Warrior_Charge"
+  },
+  {
+    "name": "Heroic Strike",
+    "class": "WARRIOR",
+    "spell_id": 78,
+    "icon": "Ability_Rogue_Ambush"
+  },
+  {
+    "name": "Rend",
+    "class": "WARRIOR",
+    "spell_id": 772,
+    "icon": "Ability_Gouge"
+  },
+  {
+    "name": "Overpower",
+    "class": "WARRIOR",
+    "spell_id": 7384,
+    "icon": "Ability_MeleeDamage"
+  },
+  {
+    "name": "Mocking Blow",
+    "class": "WARRIOR",
+    "spell_id": 694,
+    "icon": "Ability_Warrior_PunishingBlow"
+  },
+  {
+    "name": "Execute",
+    "class": "WARRIOR",
+    "spell_id": 5308,
+    "icon": "INV_Sword_48"
+  },
+  {
+    "name": "Whirlwind",
+    "class": "WARRIOR",
+    "spell_id": 1680,
+    "icon": "Ability_Whirlwind"
+  },
+  {
+    "name": "Hamstring",
+    "class": "WARRIOR",
+    "spell_id": 1715,
+    "icon": "Ability_ShockWave"
+  },
+  {
+    "name": "Pummel",
+    "class": "WARRIOR",
+    "spell_id": 6552,
+    "icon": "INV_Gauntlets_04"
+  },
+  {
+    "name": "Shield Bash",
+    "class": "WARRIOR",
+    "spell_id": 72,
+    "icon": "Ability_Warrior_ShieldBash"
+  },
+  {
+    "name": "Taunt",
+    "class": "WARRIOR",
+    "spell_id": 355,
+    "icon": "Spell_Nature_Reincarnation"
+  },
+  {
+    "name": "Challenging Shout",
+    "class": "WARRIOR",
+    "spell_id": 1161,
+    "icon": "Ability_BullRush"
+  },
+  {
+    "name": "Thunder Clap",
+    "class": "WARRIOR",
+    "spell_id": 6343,
+    "icon": "Spell_Nature_ThunderClap"
+  },
+  {
+    "name": "Intercept",
+    "class": "WARRIOR",
+    "spell_id": 20252,
+    "icon": "Ability_Rogue_Sprint"
+  },
+  {
+    "name": "Shield Block",
+    "class": "WARRIOR",
+    "spell_id": 2565,
+    "icon": "Ability_Defend"
+  },
+  {
+    "name": "Shield Wall",
+    "class": "WARRIOR",
+    "spell_id": 871,
+    "icon": "Ability_Warrior_ShieldWall"
+  },
+  {
+    "name": "Berserker Rage",
+    "class": "WARRIOR",
+    "spell_id": 18499,
+    "icon": "Spell_Nature_AncestralGuardian"
+  },
+  {
+    "name": "Retaliation",
+    "class": "WARRIOR",
+    "spell_id": 20230,
+    "icon": "Ability_Warrior_Challange"
+  },
+  {
+    "name": "Recklessness",
+    "class": "WARRIOR",
+    "spell_id": 1719,
+    "icon": "Ability_CriticalStrike"
+  },
+  {
+    "name": "Battle Stance",
+    "class": "WARRIOR",
+    "spell_id": 2457,
+    "icon": "Ability_Warrior_OffensiveStance"
+  },
+  {
+    "name": "Judgement",
+    "class": "PALADIN",
+    "spell_id": 20271,
+    "icon": "Spell_Holy_RighteousFury"
+  },
+  {
+    "name": "Consecration",
+    "class": "PALADIN",
+    "spell_id": 26573,
+    "icon": "Spell_Holy_InnerFire"
+  },
+  {
+    "name": "Exorcism",
+    "class": "PALADIN",
+    "spell_id": 879,
+    "icon": "Spell_Holy_Excorcism_02"
+  },
+  {
+    "name": "Holy Wrath",
+    "class": "PALADIN",
+    "spell_id": 2812,
+    "icon": "Spell_Holy_Excorcism"
+  },
+  {
+    "name": "Holy Light",
+    "class": "PALADIN",
+    "spell_id": 635,
+    "icon": "Spell_Holy_HolyBolt"
+  },
+  {
+    "name": "Flash of Light",
+    "class": "PALADIN",
+    "spell_id": 19750,
+    "icon": "Spell_Holy_FlashHeal"
+  },
+  {
+    "name": "Lay on Hands",
+    "class": "PALADIN",
+    "spell_id": 633,
+    "icon": "Spell_Holy_LayOnHands"
+  },
+  {
+    "name": "Divine Protection",
+    "class": "PALADIN",
+    "spell_id": 498,
+    "icon": "Spell_Holy_Restoration"
+  },
+  {
+    "name": "Divine Shield",
+    "class": "PALADIN",
+    "spell_id": 642,
+    "icon": "Spell_Holy_DivineIntervention"
+  },
+  {
+    "name": "Blessing of Protection",
+    "class": "PALADIN",
+    "spell_id": 1022,
+    "icon": "Spell_Holy_SealOfProtection"
+  },
+  {
+    "name": "Blessing of Freedom",
+    "class": "PALADIN",
+    "spell_id": 1044,
+    "icon": "Spell_Holy_SealOfValor"
+  },
+  {
+    "name": "Cleanse",
+    "class": "PALADIN",
+    "spell_id": 4987,
+    "icon": "Spell_Holy_Renew"
+  },
+  {
+    "name": "Hammer of Justice",
+    "class": "PALADIN",
+    "spell_id": 853,
+    "icon": "Spell_Holy_SealOfMight"
+  },
+  {
+    "name": "Turn Undead",
+    "class": "PALADIN",
+    "spell_id": 2878,
+    "icon": "Spell_Holy_TurnUndead"
+  },
+  {
+    "name": "Seal of Righteousness",
+    "class": "PALADIN",
+    "spell_id": 21084,
+    "icon": "Ability_ThunderBolt"
+  },
+  {
+    "name": "Righteous Fury",
+    "class": "PALADIN",
+    "spell_id": 25780,
+    "icon": "Spell_Holy_SealOfFury"
+  },
+  {
+    "name": "Blessing of Might",
+    "class": "PALADIN",
+    "spell_id": 19740,
+    "icon": "Spell_Holy_FistOfJustice"
+  },
+  {
+    "name": "Blessing of Wisdom",
+    "class": "PALADIN",
+    "spell_id": 19742,
+    "icon": "Spell_Holy_SealOfWisdom"
+  },
+  {
+    "name": "Auto Shot",
+    "class": "HUNTER",
+    "spell_id": 75,
+    "icon": "Ability_Whirlwind"
+  },
+  {
+    "name": "Arcane Shot",
+    "class": "HUNTER",
+    "spell_id": 3044,
+    "icon": "Ability_ImpalingBolt"
+  },
+  {
+    "name": "Concussive Shot",
+    "class": "HUNTER",
+    "spell_id": 5116,
+    "icon": "Spell_Frost_Stun"
+  },
+  {
+    "name": "Serpent Sting",
+    "class": "HUNTER",
+    "spell_id": 1978,
+    "icon": "Ability_Hunter_Quickshot"
+  },
+  {
+    "name": "Multi-Shot",
+    "class": "HUNTER",
+    "spell_id": 2643,
+    "icon": "Ability_UpgradeMoonGlaive"
+  },
+  {
+    "name": "Aimed Shot",
+    "class": "HUNTER",
+    "spell_id": 19434,
+    "icon": "INV_Spear_07"
+  },
+  {
+    "name": "Raptor Strike",
+    "class": "HUNTER",
+    "spell_id": 2973,
+    "icon": "Ability_MeleeDamage"
+  },
+  {
+    "name": "Wing Clip",
+    "class": "HUNTER",
+    "spell_id": 2974,
+    "icon": "Ability_Rogue_Trip"
+  },
+  {
+    "name": "Mongoose Bite",
+    "class": "HUNTER",
+    "spell_id": 1495,
+    "icon": "Ability_Hunter_SwiftStrike"
+  },
+  {
+    "name": "Disengage",
+    "class": "HUNTER",
+    "spell_id": 781,
+    "icon": "Ability_Rogue_Feint"
+  },
+  {
+    "name": "Feign Death",
+    "class": "HUNTER",
+    "spell_id": 5384,
+    "icon": "Ability_Rogue_FeignDeath"
+  },
+  {
+    "name": "Call Pet",
+    "class": "HUNTER",
+    "spell_id": 883,
+    "icon": "Ability_Hunter_BeastCall"
+  },
+  {
+    "name": "Dismiss Pet",
+    "class": "HUNTER",
+    "spell_id": 2641,
+    "icon": "Spell_Nature_SpiritWolf"
+  },
+  {
+    "name": "Revive Pet",
+    "class": "HUNTER",
+    "spell_id": 982,
+    "icon": "Ability_Hunter_BeastSoothe"
+  },
+  {
+    "name": "Mend Pet",
+    "class": "HUNTER",
+    "spell_id": 136,
+    "icon": "Ability_Hunter_MendPet"
+  },
+  {
+    "name": "Freezing Trap",
+    "class": "HUNTER",
+    "spell_id": 1499,
+    "icon": "Spell_Frost_ChainsOfIce"
+  },
+  {
+    "name": "Hunter\\",
+    "class": "HUNTER",
+    "spell_id": 1130,
+    "icon": "Ability_Hunter_SniperShot"
+  },
+  {
+    "name": "Eagle Eye",
+    "class": "HUNTER",
+    "spell_id": 6197,
+    "icon": "Ability_Hunter_EagleEye"
+  },
+  {
+    "name": "Aspect of the Cheetah",
+    "class": "HUNTER",
+    "spell_id": 5118,
+    "icon": "Ability_Mount_JungleTiger"
+  },
+  {
+    "name": "Aspect of the Monkey",
+    "class": "HUNTER",
+    "spell_id": 13163,
+    "icon": "Ability_Hunter_AspectOfTheMonkey"
+  },
+  {
+    "name": "Sinister Strike",
+    "class": "ROGUE",
+    "spell_id": 1752,
+    "icon": "Spell_Shadow_RitualOfSacrifice"
+  },
+  {
+    "name": "Backstab",
+    "class": "ROGUE",
+    "spell_id": 53,
+    "icon": "Ability_BackStab"
+  },
+  {
+    "name": "Eviscerate",
+    "class": "ROGUE",
+    "spell_id": 2098,
+    "icon": "Ability_Rogue_Eviscerate"
+  },
+  {
+    "name": "Ambush",
+    "class": "ROGUE",
+    "spell_id": 8676,
+    "icon": "Ability_Rogue_Ambush"
+  },
+  {
+    "name": "Rupture",
+    "class": "ROGUE",
+    "spell_id": 1943,
+    "icon": "Ability_Rogue_Rupture"
+  },
+  {
+    "name": "Slice and Dice",
+    "class": "ROGUE",
+    "spell_id": 5171,
+    "icon": "Ability_Rogue_SliceDice"
+  },
+  {
+    "name": "Expose Armor",
+    "class": "ROGUE",
+    "spell_id": 8647,
+    "icon": "Ability_Warrior_Riposte"
+  },
+  {
+    "name": "Gouge",
+    "class": "ROGUE",
+    "spell_id": 1776,
+    "icon": "Ability_Gouge"
+  },
+  {
+    "name": "Kick",
+    "class": "ROGUE",
+    "spell_id": 1766,
+    "icon": "Ability_Kick"
+  },
+  {
+    "name": "Kidney Shot",
+    "class": "ROGUE",
+    "spell_id": 408,
+    "icon": "Ability_Rogue_KidneyShot"
+  },
+  {
+    "name": "Sap",
+    "class": "ROGUE",
+    "spell_id": 6770,
+    "icon": "Ability_Sap"
+  },
+  {
+    "name": "Cheap Shot",
+    "class": "ROGUE",
+    "spell_id": 1833,
+    "icon": "Ability_CheapShot"
+  },
+  {
+    "name": "Blind",
+    "class": "ROGUE",
+    "spell_id": 2094,
+    "icon": "Spell_Shadow_MindSteal"
+  },
+  {
+    "name": "Stealth",
+    "class": "ROGUE",
+    "spell_id": 1784,
+    "icon": "Ability_Stealth"
+  },
+  {
+    "name": "Vanish",
+    "class": "ROGUE",
+    "spell_id": 1856,
+    "icon": "Ability_Vanish"
+  },
+  {
+    "name": "Sprint",
+    "class": "ROGUE",
+    "spell_id": 2983,
+    "icon": "Ability_Rogue_Sprint"
+  },
+  {
+    "name": "Evasion",
+    "class": "ROGUE",
+    "spell_id": 5277,
+    "icon": "Spell_Shadow_ShadowWard"
+  },
+  {
+    "name": "Feint",
+    "class": "ROGUE",
+    "spell_id": 1966,
+    "icon": "Ability_Rogue_Feint"
+  },
+  {
+    "name": "Smite",
+    "class": "PRIEST",
+    "spell_id": 585,
+    "icon": "Spell_Holy_HolySmite"
+  },
+  {
+    "name": "Mind Blast",
+    "class": "PRIEST",
+    "spell_id": 8092,
+    "icon": "Spell_Shadow_UnholyFrenzy"
+  },
+  {
+    "name": "Shadow Word: Pain",
+    "class": "PRIEST",
+    "spell_id": 589,
+    "icon": "Spell_Shadow_ShadowWordPain"
+  },
+  {
+    "name": "Mind Flay",
+    "class": "PRIEST",
+    "spell_id": 15407,
+    "icon": "Spell_Shadow_SiphonMana"
+  },
+  {
+    "name": "Lesser Heal",
+    "class": "PRIEST",
+    "spell_id": 2050,
+    "icon": "Spell_Holy_LesserHeal"
+  },
+  {
+    "name": "Heal",
+    "class": "PRIEST",
+    "spell_id": 2054,
+    "icon": "Spell_Holy_Heal"
+  },
+  {
+    "name": "Greater Heal",
+    "class": "PRIEST",
+    "spell_id": 2060,
+    "icon": "Spell_Holy_GreaterHeal"
+  },
+  {
+    "name": "Flash Heal",
+    "class": "PRIEST",
+    "spell_id": 2061,
+    "icon": "Spell_Holy_FlashHeal"
+  },
+  {
+    "name": "Renew",
+    "class": "PRIEST",
+    "spell_id": 139,
+    "icon": "Spell_Holy_Renew"
+  },
+  {
+    "name": "Power Word: Shield",
+    "class": "PRIEST",
+    "spell_id": 17,
+    "icon": "Spell_Holy_PowerWordShield"
+  },
+  {
+    "name": "Dispel Magic",
+    "class": "PRIEST",
+    "spell_id": 527,
+    "icon": "Spell_Holy_DispelMagic"
+  },
+  {
+    "name": "Abolish Disease",
+    "class": "PRIEST",
+    "spell_id": 552,
+    "icon": "Spell_Nature_NullifyDisease"
+  },
+  {
+    "name": "Fade",
+    "class": "PRIEST",
+    "spell_id": 586,
+    "icon": "Spell_Magic_LesserInvisibilty"
+  },
+  {
+    "name": "Psychic Scream",
+    "class": "PRIEST",
+    "spell_id": 8122,
+    "icon": "Spell_Shadow_PsychicScream"
+  },
+  {
+    "name": "Shackle Undead",
+    "class": "PRIEST",
+    "spell_id": 9484,
+    "icon": "Spell_Nature_Slow"
+  },
+  {
+    "name": "Power Word: Fortitude",
+    "class": "PRIEST",
+    "spell_id": 1243,
+    "icon": "Spell_Holy_WordFortitude"
+  },
+  {
+    "name": "Inner Fire",
+    "class": "PRIEST",
+    "spell_id": 588,
+    "icon": "Spell_Holy_InnerFire"
+  },
+  {
+    "name": "Divine Spirit",
+    "class": "PRIEST",
+    "spell_id": 14752,
+    "icon": "Spell_Holy_DivineSpirit"
+  },
+  {
+    "name": "Lightning Bolt",
+    "class": "SHAMAN",
+    "spell_id": 403,
+    "icon": "Spell_Nature_Lightning"
+  },
+  {
+    "name": "Chain Lightning",
+    "class": "SHAMAN",
+    "spell_id": 421,
+    "icon": "Spell_Nature_ChainLightning"
+  },
+  {
+    "name": "Earth Shock",
+    "class": "SHAMAN",
+    "spell_id": 8042,
+    "icon": "Spell_Nature_EarthShock"
+  },
+  {
+    "name": "Flame Shock",
+    "class": "SHAMAN",
+    "spell_id": 8050,
+    "icon": "Spell_Fire_FlameShock"
+  },
+  {
+    "name": "Frost Shock",
+    "class": "SHAMAN",
+    "spell_id": 8056,
+    "icon": "Spell_Frost_FrostShock"
+  },
+  {
+    "name": "Stormstrike",
+    "class": "SHAMAN",
+    "spell_id": 17364,
+    "icon": "Spell_Holy_SealOfMight"
+  },
+  {
+    "name": "Rockbiter Weapon",
+    "class": "SHAMAN",
+    "spell_id": 8017,
+    "icon": "Spell_Nature_RockBiter"
+  },
+  {
+    "name": "Windfury Weapon",
+    "class": "SHAMAN",
+    "spell_id": 8232,
+    "icon": "Spell_Nature_Cyclone"
+  },
+  {
+    "name": "Healing Wave",
+    "class": "SHAMAN",
+    "spell_id": 331,
+    "icon": "Spell_Nature_MagicImmunity"
+  },
+  {
+    "name": "Lesser Healing Wave",
+    "class": "SHAMAN",
+    "spell_id": 8004,
+    "icon": "Spell_Nature_HealingWaveLesser"
+  },
+  {
+    "name": "Chain Heal",
+    "class": "SHAMAN",
+    "spell_id": 1064,
+    "icon": "Spell_Nature_HealingWaveGreater"
+  },
+  {
+    "name": "Lightning Shield",
+    "class": "SHAMAN",
+    "spell_id": 324,
+    "icon": "Spell_Nature_LightningShield"
+  },
+  {
+    "name": "Ghost Wolf",
+    "class": "SHAMAN",
+    "spell_id": 2645,
+    "icon": "Spell_Nature_SpiritWolf"
+  },
+  {
+    "name": "Purge",
+    "class": "SHAMAN",
+    "spell_id": 370,
+    "icon": "Spell_Nature_Purge"
+  },
+  {
+    "name": "Cure Poison",
+    "class": "SHAMAN",
+    "spell_id": 526,
+    "icon": "Spell_Nature_NullifyPoison"
+  },
+  {
+    "name": "Cure Disease",
+    "class": "SHAMAN",
+    "spell_id": 2870,
+    "icon": "Spell_Nature_RemoveDisease"
+  },
+  {
+    "name": "Stoneskin Totem",
+    "class": "SHAMAN",
+    "spell_id": 8071,
+    "icon": "Spell_Nature_StoneSkinTotem"
+  },
+  {
+    "name": "Earthbind Totem",
+    "class": "SHAMAN",
+    "spell_id": 2484,
+    "icon": "Spell_Nature_StrengthOfEarthTotem02"
+  },
+  {
+    "name": "Searing Totem",
+    "class": "SHAMAN",
+    "spell_id": 3599,
+    "icon": "Spell_Fire_SearingTotem"
+  },
+  {
+    "name": "Fire Nova Totem",
+    "class": "SHAMAN",
+    "spell_id": 1535,
+    "icon": "Spell_Fire_SealOfFire"
+  },
+  {
+    "name": "Healing Stream Totem",
+    "class": "SHAMAN",
+    "spell_id": 5394,
+    "icon": "INV_Spear_04"
+  },
+  {
+    "name": "Mana Spring Totem",
+    "class": "SHAMAN",
+    "spell_id": 5675,
+    "icon": "Spell_Nature_ManaRegenTotem"
+  },
+  {
+    "name": "Grounding Totem",
+    "class": "SHAMAN",
+    "spell_id": 8177,
+    "icon": "Spell_Nature_GroundingTotem"
+  },
+  {
+    "name": "Windfury Totem",
+    "class": "SHAMAN",
+    "spell_id": 8512,
+    "icon": "Spell_Nature_Windfury"
+  },
+  {
+    "name": "Fireball",
+    "class": "MAGE",
+    "spell_id": 133,
+    "icon": "Spell_Fire_FlameBolt"
+  },
+  {
+    "name": "Frostbolt",
+    "class": "MAGE",
+    "spell_id": 116,
+    "icon": "Spell_Frost_FrostBolt02"
+  },
+  {
+    "name": "Arcane Missiles",
+    "class": "MAGE",
+    "spell_id": 5143,
+    "icon": "Spell_Nature_StarFall"
+  },
+  {
+    "name": "Fire Blast",
+    "class": "MAGE",
+    "spell_id": 2136,
+    "icon": "Spell_Fire_Fireball"
+  },
+  {
+    "name": "Scorch",
+    "class": "MAGE",
+    "spell_id": 2948,
+    "icon": "Spell_Fire_SoulBurn"
+  },
+  {
+    "name": "Arcane Explosion",
+    "class": "MAGE",
+    "spell_id": 1449,
+    "icon": "Spell_Nature_WispSplode"
+  },
+  {
+    "name": "Blizzard",
+    "class": "MAGE",
+    "spell_id": 10,
+    "icon": "Spell_Frost_IceStorm"
+  },
+  {
+    "name": "Flamestrike",
+    "class": "MAGE",
+    "spell_id": 2120,
+    "icon": "Spell_Fire_SelfDestruct"
+  },
+  {
+    "name": "Cone of Cold",
+    "class": "MAGE",
+    "spell_id": 120,
+    "icon": "Spell_Frost_Glacier"
+  },
+  {
+    "name": "Frost Nova",
+    "class": "MAGE",
+    "spell_id": 122,
+    "icon": "Spell_Frost_FrostNova"
+  },
+  {
+    "name": "Polymorph",
+    "class": "MAGE",
+    "spell_id": 118,
+    "icon": "Spell_Nature_Polymorph"
+  },
+  {
+    "name": "Counterspell",
+    "class": "MAGE",
+    "spell_id": 2139,
+    "icon": "Spell_Frost_IceShock"
+  },
+  {
+    "name": "Blink",
+    "class": "MAGE",
+    "spell_id": 1953,
+    "icon": "Spell_Arcane_Blink"
+  },
+  {
+    "name": "Evocation",
+    "class": "MAGE",
+    "spell_id": 12051,
+    "icon": "Spell_Nature_Purge"
+  },
+  {
+    "name": "Mana Shield",
+    "class": "MAGE",
+    "spell_id": 1463,
+    "icon": "Spell_Shadow_DetectLesserInvisibility"
+  },
+  {
+    "name": "Ice Barrier",
+    "class": "MAGE",
+    "spell_id": 11426,
+    "icon": "Spell_Ice_Lament"
+  },
+  {
+    "name": "Arcane Intellect",
+    "class": "MAGE",
+    "spell_id": 1459,
+    "icon": "Spell_Holy_MagicalSentry"
+  },
+  {
+    "name": "Frost Armor",
+    "class": "MAGE",
+    "spell_id": 168,
+    "icon": "Spell_Frost_FrostArmor02"
+  },
+  {
+    "name": "Ice Armor",
+    "class": "MAGE",
+    "spell_id": 7302,
+    "icon": "Spell_Frost_FrostArmor02"
+  },
+  {
+    "name": "Dampen Magic",
+    "class": "MAGE",
+    "spell_id": 604,
+    "icon": "Spell_Nature_AbolishMagic"
+  },
+  {
+    "name": "Amplify Magic",
+    "class": "MAGE",
+    "spell_id": 1008,
+    "icon": "Spell_Holy_FlashHeal"
+  },
+  {
+    "name": "Shadow Bolt",
+    "class": "WARLOCK",
+    "spell_id": 686,
+    "icon": "Spell_Shadow_ShadowBolt"
+  },
+  {
+    "name": "Immolate",
+    "class": "WARLOCK",
+    "spell_id": 348,
+    "icon": "Spell_Fire_Immolation"
+  },
+  {
+    "name": "Corruption",
+    "class": "WARLOCK",
+    "spell_id": 172,
+    "icon": "Spell_Shadow_AbominationExplosion"
+  },
+  {
+    "name": "Curse of Agony",
+    "class": "WARLOCK",
+    "spell_id": 980,
+    "icon": "Spell_Shadow_CurseOfSargeras"
+  },
+  {
+    "name": "Curse of the Elements",
+    "class": "WARLOCK",
+    "spell_id": 1490,
+    "icon": "Spell_Shadow_ChillTouch"
+  },
+  {
+    "name": "Curse of Recklessness",
+    "class": "WARLOCK",
+    "spell_id": 704,
+    "icon": "Spell_Shadow_UnholyStrength"
+  },
+  {
+    "name": "Curse of Weakness",
+    "class": "WARLOCK",
+    "spell_id": 702,
+    "icon": "Spell_Shadow_CurseOfMannoroth"
+  },
+  {
+    "name": "Drain Life",
+    "class": "WARLOCK",
+    "spell_id": 689,
+    "icon": "Spell_Shadow_LifeDrain02"
+  },
+  {
+    "name": "Drain Soul",
+    "class": "WARLOCK",
+    "spell_id": 1120,
+    "icon": "Spell_Shadow_Haunting"
+  },
+  {
+    "name": "Life Tap",
+    "class": "WARLOCK",
+    "spell_id": 1454,
+    "icon": "Spell_Shadow_BurningSpirit"
+  },
+  {
+    "name": "Fear",
+    "class": "WARLOCK",
+    "spell_id": 5782,
+    "icon": "Spell_Shadow_Possession"
+  },
+  {
+    "name": "Banish",
+    "class": "WARLOCK",
+    "spell_id": 710,
+    "icon": "Spell_Shadow_Cripple"
+  },
+  {
+    "name": "Death Coil",
+    "class": "WARLOCK",
+    "spell_id": 6789,
+    "icon": "Spell_Shadow_DeathCoil"
+  },
+  {
+    "name": "Howl of Terror",
+    "class": "WARLOCK",
+    "spell_id": 5484,
+    "icon": "Spell_Shadow_DeathScream"
+  },
+  {
+    "name": "Create Healthstone (Minor)",
+    "class": "WARLOCK",
+    "spell_id": 6201,
+    "icon": "INV_Stone_04"
+  },
+  {
+    "name": "Create Soulstone (Minor)",
+    "class": "WARLOCK",
+    "spell_id": 693,
+    "icon": "INV_Misc_Orb_04"
+  },
+  {
+    "name": "Summon Imp",
+    "class": "WARLOCK",
+    "spell_id": 688,
+    "icon": "Spell_Shadow_SummonImp"
+  },
+  {
+    "name": "Summon Voidwalker",
+    "class": "WARLOCK",
+    "spell_id": 697,
+    "icon": "Spell_Shadow_SummonVoidWalker"
+  },
+  {
+    "name": "Summon Succubus",
+    "class": "WARLOCK",
+    "spell_id": 712,
+    "icon": "Spell_Shadow_SummonSuccubus"
+  },
+  {
+    "name": "Summon Felhunter",
+    "class": "WARLOCK",
+    "spell_id": 691,
+    "icon": "Spell_Shadow_SummonFelHunter"
+  },
+  {
+    "name": "Enslave Demon",
+    "class": "WARLOCK",
+    "spell_id": 1098,
+    "icon": "Spell_Shadow_EnslaveDemon"
+  },
+  {
+    "name": "Demon Armor",
+    "class": "WARLOCK",
+    "spell_id": 706,
+    "icon": "Spell_Shadow_RagingScream"
+  },
+  {
+    "name": "Detect Lesser Invisibility",
+    "class": "WARLOCK",
+    "spell_id": 132,
+    "icon": "Spell_Shadow_DetectLesserInvisibility"
+  },
+  {
+    "name": "Wrath",
+    "class": "DRUID",
+    "spell_id": 5176,
+    "icon": "Spell_Nature_AbolishMagic"
+  },
+  {
+    "name": "Moonfire",
+    "class": "DRUID",
+    "spell_id": 8921,
+    "icon": "Spell_Nature_StarFall"
+  },
+  {
+    "name": "Starfire",
+    "class": "DRUID",
+    "spell_id": 2912,
+    "icon": "Spell_Arcane_StarFire"
+  },
+  {
+    "name": "Faerie Fire",
+    "class": "DRUID",
+    "spell_id": 770,
+    "icon": "Spell_Nature_FaerieFire"
+  },
+  {
+    "name": "Maul",
+    "class": "DRUID",
+    "spell_id": 6807,
+    "icon": "Ability_Druid_Maul"
+  },
+  {
+    "name": "Swipe",
+    "class": "DRUID",
+    "spell_id": 779,
+    "icon": "INV_Misc_MonsterClaw_03"
+  },
+  {
+    "name": "Claw",
+    "class": "DRUID",
+    "spell_id": 1082,
+    "icon": "Ability_Druid_Rake"
+  },
+  {
+    "name": "Rake",
+    "class": "DRUID",
+    "spell_id": 1822,
+    "icon": "Ability_Druid_Disembowel"
+  },
+  {
+    "name": "Rip",
+    "class": "DRUID",
+    "spell_id": 1079,
+    "icon": "Ability_GhoulFrenzy"
+  },
+  {
+    "name": "Shred",
+    "class": "DRUID",
+    "spell_id": 5221,
+    "icon": "Spell_Shadow_VampiricAura"
+  },
+  {
+    "name": "Ferocious Bite",
+    "class": "DRUID",
+    "spell_id": 22568,
+    "icon": "Ability_Druid_FerociousBite"
+  },
+  {
+    "name": "Bash",
+    "class": "DRUID",
+    "spell_id": 5211,
+    "icon": "Ability_Druid_Bash"
+  },
+  {
+    "name": "Growl",
+    "class": "DRUID",
+    "spell_id": 6795,
+    "icon": "Ability_Physical_Taunt"
+  },
+  {
+    "name": "Pounce",
+    "class": "DRUID",
+    "spell_id": 9005,
+    "icon": "Ability_Druid_SupriseAttack"
+  },
+  {
+    "name": "Healing Touch",
+    "class": "DRUID",
+    "spell_id": 5185,
+    "icon": "Spell_Nature_HealingTouch"
+  },
+  {
+    "name": "Rejuvenation",
+    "class": "DRUID",
+    "spell_id": 774,
+    "icon": "Spell_Nature_Rejuvenation"
+  },
+  {
+    "name": "Regrowth",
+    "class": "DRUID",
+    "spell_id": 8936,
+    "icon": "Spell_Nature_ResistNature"
+  },
+  {
+    "name": "Tranquility",
+    "class": "DRUID",
+    "spell_id": 740,
+    "icon": "Spell_Nature_Tranquility"
+  },
+  {
+    "name": "Abolish Poison",
+    "class": "DRUID",
+    "spell_id": 2893,
+    "icon": "Spell_Nature_NullifyPoison_02"
+  },
+  {
+    "name": "Remove Curse",
+    "class": "DRUID",
+    "spell_id": 2782,
+    "icon": "Spell_Holy_RemoveCurse"
+  },
+  {
+    "name": "Innervate",
+    "class": "DRUID",
+    "spell_id": 29166,
+    "icon": "Spell_Nature_Lightning"
+  },
+  {
+    "name": "Bear Form",
+    "class": "DRUID",
+    "spell_id": 5487,
+    "icon": "Ability_Racial_BearForm"
+  },
+  {
+    "name": "Cat Form",
+    "class": "DRUID",
+    "spell_id": 768,
+    "icon": "Ability_Druid_CatForm"
+  },
+  {
+    "name": "Travel Form",
+    "class": "DRUID",
+    "spell_id": 783,
+    "icon": "Ability_Druid_TravelForm"
+  },
+  {
+    "name": "Aquatic Form",
+    "class": "DRUID",
+    "spell_id": 1066,
+    "icon": "Ability_Druid_AquaticForm"
+  },
+  {
+    "name": "Moonkin Form",
+    "class": "DRUID",
+    "spell_id": 24858,
+    "icon": "Spell_Nature_ForceOfNature"
+  }
+]

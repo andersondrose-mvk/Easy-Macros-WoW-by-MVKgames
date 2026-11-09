@@ -1784,6 +1784,36 @@ window.classSkillsDatabase = {
             "description": "Standard ability macro."
         },
         {
+            "en": "Curse of the Elements",
+            "pt": "Maldição dos Elementos",
+            "es": "Maldición de los elementos",
+            "cat": "ranged",
+            "kind": "spell",
+            "spellId": 1490,
+            "style": "cast",
+            "description": "Standard ability macro."
+        },
+        {
+            "en": "Curse of Recklessness",
+            "pt": "Maldição da Temeridade",
+            "es": "Maldición de temeridad",
+            "cat": "ranged",
+            "kind": "spell",
+            "spellId": 704,
+            "style": "cast",
+            "description": "Standard ability macro."
+        },
+        {
+            "en": "Curse of Weakness",
+            "pt": "Maldição da Fraqueza",
+            "es": "Maldición de debilidad",
+            "cat": "ranged",
+            "kind": "spell",
+            "spellId": 702,
+            "style": "cast",
+            "description": "Standard ability macro."
+        },
+        {
             "en": "Drain Life",
             "pt": "Drenar Vida",
             "es": "Drenar vida",
