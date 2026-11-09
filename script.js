@@ -1,6 +1,35 @@
 /* cspell:disable-file */
 
 const classSkillsDatabase = window.classSkillsDatabase;
+const wowSkillCatalog = window.wowSkillCatalog || [];
+wowSkillCatalog.forEach(function(skill) {
+    const classSkills = classSkillsDatabase[skill.class];
+    if (!Array.isArray(classSkills)) return;
+
+    const existingSkill = classSkills.find(function(entry) {
+        return entry.kind === "spell" && entry.spellId === skill.spell_id;
+    });
+    if (existingSkill) {
+        existingSkill.icon = skill.icon;
+        return;
+    }
+
+    const duplicateName = classSkills.find(function(entry) {
+        return entry.en && entry.en.toLowerCase() === skill.name.toLowerCase();
+    });
+    if (duplicateName) {
+        duplicateName.icon = skill.icon;
+        return;
+    }
+
+    classSkills.push({
+        en: skill.name,
+        cat: "abilities",
+        kind: "spell",
+        spellId: skill.spell_id,
+        icon: skill.icon
+    });
+});
 let activeClass = "";
 let activeCategory = "all";
 let selectedSkillsSequence = [];
@@ -159,6 +188,19 @@ function fetchSkillIcon(skill) {
 }
 
 function loadSkillIcon(image, skill) {
+    if (typeof skill.icon === "string" && /^[a-z0-9_]+$/i.test(skill.icon)) {
+        image.onerror = function() {
+            image.onerror = null;
+            image.src = defaultSkillIcon;
+        };
+        image.src = "public/icons/" + skill.icon.toLowerCase() + ".jpg";
+        return;
+    }
+    if (skill.kind === "spell") {
+        image.src = defaultSkillIcon;
+        return;
+    }
+
     fetchSkillIcon(skill).then(function(iconUrl) {
         if (iconUrl === defaultSkillIcon) {
             image.src = defaultSkillIcon;
@@ -404,16 +446,44 @@ selectedMacroSkill = null;
 document.querySelectorAll(".library-item-row").forEach(function(r) { r.classList.remove("selected-active"); });
 updateMacroDisplay();
 });
-document.getElementById("btnCopy").addEventListener("click", function() {
-if (!macroOutput.value) return;
-macroOutput.select();
-document.execCommand("copy");
-alert("Código copiado com sucesso!");
-});
-document.getElementById("btnInsertBlizzard").addEventListener("click", function() {
-if (!macroOutput.value) return;
-alert("Injetando macro diretamente no client de World of Warcraft...");
-});
+async function copyMacroCode() {
+    if (!macroOutput.value) return;
+
+    try {
+        let copied = false;
+        if (navigator.clipboard && window.isSecureContext) {
+            try {
+                await navigator.clipboard.writeText(macroOutput.value);
+                copied = true;
+            } catch (error) {
+                console.warn("Clipboard API failed; trying the browser fallback.", error);
+            }
+        }
+
+        if (!copied) {
+            const temporaryOutput = document.createElement("textarea");
+            temporaryOutput.value = macroOutput.value;
+            temporaryOutput.setAttribute("readonly", "");
+            temporaryOutput.style.position = "fixed";
+            temporaryOutput.style.opacity = "0";
+            document.body.appendChild(temporaryOutput);
+            temporaryOutput.select();
+            try {
+                copied = document.execCommand("copy");
+            } finally {
+                temporaryOutput.remove();
+            }
+            if (!copied) throw new Error("Clipboard copy command was rejected.");
+        }
+        alert("Macro copiado com sucesso!");
+    } catch (error) {
+        console.error("Could not copy the macro to the clipboard.", error);
+        alert("Não foi possível copiar o macro. Selecione e copie o código manualmente.");
+    }
+}
+
+document.getElementById("btnCopy").addEventListener("click", copyMacroCode);
+document.getElementById("btnCopyMacro").addEventListener("click", copyMacroCode);
 
 updateLocalizedLabels();
 

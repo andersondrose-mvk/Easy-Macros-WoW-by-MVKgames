@@ -1,0 +1,942 @@
+[
+  {
+    "class_name": "Mage",
+    "skill_name": "Fireball",
+    "icon_name": "Spell_Fire_FlameBolt"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Frostbolt",
+    "icon_name": "Spell_Frost_FrostBolt02"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Arcane Missiles",
+    "icon_name": "Spell_Nature_StarFall"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Fire Blast",
+    "icon_name": "Spell_Fire_Fireball"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Scorch",
+    "icon_name": "Spell_Fire_SoulBurn"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Arcane Explosion",
+    "icon_name": "Spell_Nature_WispSplode"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Blizzard",
+    "icon_name": "Spell_Frost_IceStorm"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Flamestrike",
+    "icon_name": "Spell_Fire_SelfDestruct"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Cone of Cold",
+    "icon_name": "Spell_Frost_Glacier"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Frost Nova",
+    "icon_name": "Spell_Frost_FrostNova"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Polymorph",
+    "icon_name": "Spell_Nature_Polymorph"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Counterspell",
+    "icon_name": "Spell_Frost_IceShock"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Blink",
+    "icon_name": "Spell_Arcane_Blink"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Evocation",
+    "icon_name": "Spell_Nature_Purge"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Mana Shield",
+    "icon_name": "Spell_Shadow_DetectLesserInvisibility"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Ice Barrier",
+    "icon_name": "Spell_Ice_Lament"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Arcane Intellect",
+    "icon_name": "Spell_Holy_MagicalSentry"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Frost Armor",
+    "icon_name": "Spell_Frost_FrostArmor02"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Ice Armor",
+    "icon_name": "Spell_Frost_FrostArmor02"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Dampen Magic",
+    "icon_name": "Spell_Nature_AbolishMagic"
+  },
+  {
+    "class_name": "Mage",
+    "skill_name": "Amplify Magic",
+    "icon_name": "Spell_Holy_FlashHeal"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Smite",
+    "icon_name": "Spell_Holy_HolySmite"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Mind Blast",
+    "icon_name": "Spell_Shadow_UnholyFrenzy"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Shadow Word: Pain",
+    "icon_name": "Spell_Shadow_ShadowWordPain"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Mind Flay",
+    "icon_name": "Spell_Shadow_SiphonMana"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Lesser Heal",
+    "icon_name": "Spell_Holy_LesserHeal"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Heal",
+    "icon_name": "Spell_Holy_Heal"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Greater Heal",
+    "icon_name": "Spell_Holy_GreaterHeal"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Flash Heal",
+    "icon_name": "Spell_Holy_FlashHeal"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Renew",
+    "icon_name": "Spell_Holy_Renew"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Power Word: Shield",
+    "icon_name": "Spell_Holy_PowerWordShield"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Dispel Magic",
+    "icon_name": "Spell_Holy_DispelMagic"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Abolish Disease",
+    "icon_name": "Spell_Nature_NullifyDisease"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Fade",
+    "icon_name": "Spell_Magic_LesserInvisibilty"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Psychic Scream",
+    "icon_name": "Spell_Shadow_PsychicScream"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Shackle Undead",
+    "icon_name": "Spell_Nature_Slow"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Power Word: Fortitude",
+    "icon_name": "Spell_Holy_WordFortitude"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Inner Fire",
+    "icon_name": "Spell_Holy_InnerFire"
+  },
+  {
+    "class_name": "Priest",
+    "skill_name": "Divine Spirit",
+    "icon_name": "Spell_Holy_DivineSpirit"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Judgement",
+    "icon_name": "Spell_Holy_RighteousFury"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Consecration",
+    "icon_name": "Spell_Holy_InnerFire"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Exorcism",
+    "icon_name": "Spell_Holy_Excorcism_02"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Holy Wrath",
+    "icon_name": "Spell_Holy_Excorcism"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Holy Light",
+    "icon_name": "Spell_Holy_HolyBolt"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Flash of Light",
+    "icon_name": "Spell_Holy_FlashHeal"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Lay on Hands",
+    "icon_name": "Spell_Holy_LayOnHands"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Divine Protection",
+    "icon_name": "Spell_Holy_Restoration"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Divine Shield",
+    "icon_name": "Spell_Holy_DivineIntervention"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Blessing of Protection",
+    "icon_name": "Spell_Holy_SealOfProtection"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Blessing of Freedom",
+    "icon_name": "Spell_Holy_SealOfValor"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Cleanse",
+    "icon_name": "Spell_Holy_Renew"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Hammer of Justice",
+    "icon_name": "Spell_Holy_SealOfMight"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Turn Undead",
+    "icon_name": "Spell_Holy_TurnUndead"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Seal of Righteousness",
+    "icon_name": "Ability_ThunderBolt"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Righteous Fury",
+    "icon_name": "Spell_Holy_SealOfFury"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Blessing of Might",
+    "icon_name": "Spell_Holy_FistOfJustice"
+  },
+  {
+    "class_name": "Paladin",
+    "skill_name": "Blessing of Wisdom",
+    "icon_name": "Spell_Holy_SealOfWisdom"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Charge",
+    "icon_name": "Ability_Warrior_Charge"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Heroic Strike",
+    "icon_name": "Ability_Rogue_Ambush"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Rend",
+    "icon_name": "Ability_Gouge"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Overpower",
+    "icon_name": "Ability_MeleeDamage"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Mocking Blow",
+    "icon_name": "Ability_Warrior_PunishingBlow"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Execute",
+    "icon_name": "INV_Sword_48"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Whirlwind",
+    "icon_name": "Ability_Whirlwind"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Hamstring",
+    "icon_name": "Ability_ShockWave"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Pummel",
+    "icon_name": "INV_Gauntlets_04"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Shield Bash",
+    "icon_name": "Ability_Warrior_ShieldBash"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Taunt",
+    "icon_name": "Spell_Nature_Reincarnation"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Challenging Shout",
+    "icon_name": "Ability_BullRush"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Thunder Clap",
+    "icon_name": "Spell_Nature_ThunderClap"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Intercept",
+    "icon_name": "Ability_Rogue_Sprint"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Shield Block",
+    "icon_name": "Ability_Defend"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Shield Wall",
+    "icon_name": "Ability_Warrior_ShieldWall"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Berserker Rage",
+    "icon_name": "Spell_Nature_AncestralGuardian"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Retaliation",
+    "icon_name": "Ability_Warrior_Challange"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Recklessness",
+    "icon_name": "Ability_CriticalStrike"
+  },
+  {
+    "class_name": "Warrior",
+    "skill_name": "Battle Stance",
+    "icon_name": "Ability_Warrior_OffensiveStance"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Sinister Strike",
+    "icon_name": "Spell_Shadow_RitualOfSacrifice"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Backstab",
+    "icon_name": "Ability_BackStab"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Eviscerate",
+    "icon_name": "Ability_Rogue_Eviscerate"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Ambush",
+    "icon_name": "Ability_Rogue_Ambush"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Rupture",
+    "icon_name": "Ability_Rogue_Rupture"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Slice and Dice",
+    "icon_name": "Ability_Rogue_SliceDice"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Expose Armor",
+    "icon_name": "Ability_Warrior_Riposte"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Gouge",
+    "icon_name": "Ability_Gouge"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Kick",
+    "icon_name": "Ability_Kick"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Kidney Shot",
+    "icon_name": "Ability_Rogue_KidneyShot"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Sap",
+    "icon_name": "Ability_Sap"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Cheap Shot",
+    "icon_name": "Ability_CheapShot"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Blind",
+    "icon_name": "Spell_Shadow_MindSteal"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Stealth",
+    "icon_name": "Ability_Stealth"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Vanish",
+    "icon_name": "Ability_Vanish"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Sprint",
+    "icon_name": "Ability_Rogue_Sprint"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Evasion",
+    "icon_name": "Spell_Shadow_ShadowWard"
+  },
+  {
+    "class_name": "Rogue",
+    "skill_name": "Feint",
+    "icon_name": "Ability_Rogue_Feint"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Shadow Bolt",
+    "icon_name": "Spell_Shadow_ShadowBolt"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Immolate",
+    "icon_name": "Spell_Fire_Immolation"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Corruption",
+    "icon_name": "Spell_Shadow_AbominationExplosion"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Curse of Agony",
+    "icon_name": "Spell_Shadow_CurseOfSargeras"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Curse of the Elements",
+    "icon_name": "Spell_Shadow_ChillTouch"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Curse of Recklessness",
+    "icon_name": "Spell_Shadow_UnholyStrength"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Curse of Weakness",
+    "icon_name": "Spell_Shadow_CurseOfMannoroth"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Drain Life",
+    "icon_name": "Spell_Shadow_LifeDrain02"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Drain Soul",
+    "icon_name": "Spell_Shadow_Haunting"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Life Tap",
+    "icon_name": "Spell_Shadow_BurningSpirit"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Fear",
+    "icon_name": "Spell_Shadow_Possession"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Banish",
+    "icon_name": "Spell_Shadow_Cripple"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Death Coil",
+    "icon_name": "Spell_Shadow_DeathCoil"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Howl of Terror",
+    "icon_name": "Spell_Shadow_DeathScream"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Create Healthstone (Minor)",
+    "icon_name": "INV_Stone_04"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Create Soulstone (Minor)",
+    "icon_name": "INV_Misc_Orb_04"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Summon Imp",
+    "icon_name": "Spell_Shadow_SummonImp"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Summon Voidwalker",
+    "icon_name": "Spell_Shadow_SummonVoidWalker"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Summon Succubus",
+    "icon_name": "Spell_Shadow_SummonSuccubus"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Summon Felhunter",
+    "icon_name": "Spell_Shadow_SummonFelHunter"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Enslave Demon",
+    "icon_name": "Spell_Shadow_EnslaveDemon"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Demon Armor",
+    "icon_name": "Spell_Shadow_RagingScream"
+  },
+  {
+    "class_name": "Warlock",
+    "skill_name": "Detect Lesser Invisibility",
+    "icon_name": "Spell_Shadow_DetectLesserInvisibility"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Wrath",
+    "icon_name": "Spell_Nature_AbolishMagic"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Moonfire",
+    "icon_name": "Spell_Nature_StarFall"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Starfire",
+    "icon_name": "Spell_Arcane_StarFire"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Faerie Fire",
+    "icon_name": "Spell_Nature_FaerieFire"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Maul",
+    "icon_name": "Ability_Druid_Maul"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Swipe",
+    "icon_name": "INV_Misc_MonsterClaw_03"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Claw",
+    "icon_name": "Ability_Druid_Rake"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Rake",
+    "icon_name": "Ability_Druid_Disembowel"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Rip",
+    "icon_name": "Ability_GhoulFrenzy"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Shred",
+    "icon_name": "Spell_Shadow_VampiricAura"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Ferocious Bite",
+    "icon_name": "Ability_Druid_FerociousBite"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Bash",
+    "icon_name": "Ability_Druid_Bash"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Growl",
+    "icon_name": "Ability_Physical_Taunt"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Pounce",
+    "icon_name": "Ability_Druid_SupriseAttack"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Healing Touch",
+    "icon_name": "Spell_Nature_HealingTouch"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Rejuvenation",
+    "icon_name": "Spell_Nature_Rejuvenation"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Regrowth",
+    "icon_name": "Spell_Nature_ResistNature"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Tranquility",
+    "icon_name": "Spell_Nature_Tranquility"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Abolish Poison",
+    "icon_name": "Spell_Nature_NullifyPoison_02"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Remove Curse",
+    "icon_name": "Spell_Holy_RemoveCurse"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Innervate",
+    "icon_name": "Spell_Nature_Lightning"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Bear Form",
+    "icon_name": "Ability_Racial_BearForm"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Cat Form",
+    "icon_name": "Ability_Druid_CatForm"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Travel Form",
+    "icon_name": "Ability_Druid_TravelForm"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Aquatic Form",
+    "icon_name": "Ability_Druid_AquaticForm"
+  },
+  {
+    "class_name": "Druid",
+    "skill_name": "Moonkin Form",
+    "icon_name": "Spell_Nature_ForceOfNature"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Lightning Bolt",
+    "icon_name": "Spell_Nature_Lightning"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Chain Lightning",
+    "icon_name": "Spell_Nature_ChainLightning"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Earth Shock",
+    "icon_name": "Spell_Nature_EarthShock"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Flame Shock",
+    "icon_name": "Spell_Fire_FlameShock"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Frost Shock",
+    "icon_name": "Spell_Frost_FrostShock"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Stormstrike",
+    "icon_name": "Spell_Holy_SealOfMight"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Rockbiter Weapon",
+    "icon_name": "Spell_Nature_RockBiter"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Windfury Weapon",
+    "icon_name": "Spell_Nature_Cyclone"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Healing Wave",
+    "icon_name": "Spell_Nature_MagicImmunity"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Lesser Healing Wave",
+    "icon_name": "Spell_Nature_HealingWaveLesser"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Chain Heal",
+    "icon_name": "Spell_Nature_HealingWaveGreater"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Lightning Shield",
+    "icon_name": "Spell_Nature_LightningShield"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Ghost Wolf",
+    "icon_name": "Spell_Nature_SpiritWolf"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Purge",
+    "icon_name": "Spell_Nature_Purge"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Cure Poison",
+    "icon_name": "Spell_Nature_NullifyPoison"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Cure Disease",
+    "icon_name": "Spell_Nature_RemoveDisease"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Stoneskin Totem",
+    "icon_name": "Spell_Nature_StoneSkinTotem"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Earthbind Totem",
+    "icon_name": "Spell_Nature_StrengthOfEarthTotem02"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Searing Totem",
+    "icon_name": "Spell_Fire_SearingTotem"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Fire Nova Totem",
+    "icon_name": "Spell_Fire_SealOfFire"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Healing Stream Totem",
+    "icon_name": "INV_Spear_04"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Mana Spring Totem",
+    "icon_name": "Spell_Nature_ManaRegenTotem"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Grounding Totem",
+    "icon_name": "Spell_Nature_GroundingTotem"
+  },
+  {
+    "class_name": "Shaman",
+    "skill_name": "Windfury Totem",
+    "icon_name": "Spell_Nature_Windfury"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Auto Shot",
+    "icon_name": "Ability_Whirlwind"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Arcane Shot",
+    "icon_name": "Ability_ImpalingBolt"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Concussive Shot",
+    "icon_name": "Spell_Frost_Stun"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Serpent Sting",
+    "icon_name": "Ability_Hunter_Quickshot"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Multi-Shot",
+    "icon_name": "Ability_UpgradeMoonGlaive"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Aimed Shot",
+    "icon_name": "INV_Spear_07"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Raptor Strike",
+    "icon_name": "Ability_MeleeDamage"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Wing Clip",
+    "icon_name": "Ability_Rogue_Trip"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Mongoose Bite",
+    "icon_name": "Ability_Hunter_SwiftStrike"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Disengage",
+    "icon_name": "Ability_Rogue_Feint"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Feign Death",
+    "icon_name": "Ability_Rogue_FeignDeath"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Call Pet",
+    "icon_name": "Ability_Hunter_BeastCall"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Dismiss Pet",
+    "icon_name": "Spell_Nature_SpiritWolf"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Revive Pet",
+    "icon_name": "Ability_Hunter_BeastSoothe"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Mend Pet",
+    "icon_name": "Ability_Hunter_MendPet"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Freezing Trap",
+    "icon_name": "Spell_Frost_ChainsOfIce"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Hunter\\",
+    "icon_name": "Ability_Hunter_SniperShot"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Eagle Eye",
+    "icon_name": "Ability_Hunter_EagleEye"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Aspect of the Cheetah",
+    "icon_name": "Ability_Mount_JungleTiger"
+  },
+  {
+    "class_name": "Hunter",
+    "skill_name": "Aspect of the Monkey",
+    "icon_name": "Ability_Hunter_AspectOfTheMonkey"
+  }
+]
