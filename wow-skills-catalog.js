@@ -2560,5 +2560,11 @@ window.wowSkillCatalog = [
     "class": "HUNTER",
     "spell_id": 19434,
     "icon": "INV_Spear_07"
+  },
+  {
+    "name": "Ice Block",
+    "class": "MAGE",
+    "spell_id": 45438,
+    "icon": "Spell_Frost_FrostNova"
   }
 ];
